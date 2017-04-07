@@ -1,0 +1,71 @@
+.docs-nav.menu {
+  margin: 0.5rem 0;
+  background: $light-gray;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  li small {
+    color: #999;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 60%;
+    display: block;
+    margin-top: 5px;
+  }
+
+  a {
+    font-size: 1.125rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    &:hover {
+      background: rgba(#000, 0.05);
+    }
+  }
+
+  .current a {
+    background: rgba(#000, 0.05);
+  }
+
+  .label {
+    background-color: #ddd;
+    color: #777;
+    margin-left: 5px;
+    padding: 0.22222rem 0.44444rem 0.22222rem;
+    font-size: 0.61111rem;
+  }
+}
+
+.docs-nav-title {
+  background: #e6e6e6;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding-top: 1rem;
+  padding-left: 0.9rem;
+  margin-bottom: -10px;
+}
+
+.docs-nav-version {
+  padding-left: 0.9rem;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-bottom: -0.5rem;
+  margin-top: -0.4rem;
+
+  .menu & a {
+    margin-left: 6px;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+}
+
+.menu.vertical>li {
+  margin-top: 0.5rem;
+}
+
+.menu.vertical.nested>li {
+  margin-top: inherit;
+}
