@@ -7768,6 +7768,11 @@ a, a:visited {
 ul.breadcrumbs {
   margin-left: 0rem !important; }
 
+.breadcrumbs {
+  margin-bottom: .5rem; }
+  .breadcrumbs li {
+    padding-top: .75rem; }
+
 /*********************
 H1, H2, H3, H4, H5 P STYLES
 *********************/

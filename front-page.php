@@ -47,23 +47,16 @@
 
 			   
 			    <?php  //News Query		
-					$news_query_cond = $theme_option['flagship_sub_news_query_cond'];
 					$news_quantity = $theme_option['flagship_sub_news_quantity']; 
 					if ( false === ( $news_query = get_transient( 'news_mainpage_query' ) ) ) {
-						if ($news_query_cond === 1) {
 							$news_query = new WP_Query(array(
 								'post_type' => 'post',
 								'posts_per_page' => $news_quantity)); 
-						} else {
-							$news_query = new WP_Query(array(
-								'post_type' => 'post',
-								'posts_per_page' => $news_quantity)); 
-						}
 					set_transient( 'news_mainpage_query', $news_query, 2592000 );
 					} 	
 				if ( $news_query->have_posts() ) : ?>
 
-				<div class="small-12 large-8 columns news-feed">
+				<div class="small-12 large-9 end columns news-feed">
 
 					<h3><?php echo $theme_option['flagship_sub_feed_name']; ?></h3>
 
