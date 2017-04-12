@@ -77,12 +77,12 @@
 				<?php endif; ?>
 				<?php if ( is_active_sidebar( 'homepage1' ) && is_active_sidebar( 'homepage2' )  ) : ?>
 				    <div class="row" id="hp-buckets">
-				    	<div class="small-6 columns hide-for-print" role="complementary">
+				    	<div class="small-12 medium-6 columns hide-for-print" role="complementary">
 				    		<div class="primary callout">
 				    			<?php dynamic_sidebar('homepage1'); ?>
 				    		</div> 
 						</div>
-						<div class="small-6 columns hide-for-print" role="complementary">
+						<div class="small-12 medium-6 columns hide-for-print" role="complementary">
 							<div class="primary callout">
 				    			<?php dynamic_sidebar('homepage2'); ?>
 				    		</div> 
@@ -95,6 +95,11 @@
 			
 			<div class="hide-for-small-only medium-3 medium-pull-9 columns">
 		    	<?php joints_sidebar_nav(); ?>
+
+		    	<div class="sidebar-nav search">
+		    		<hr><?php get_search_form(); ?>
+		    	</div>
+		    	
 		    </div>
 
 

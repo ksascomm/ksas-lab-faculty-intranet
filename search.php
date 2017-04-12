@@ -13,6 +13,10 @@
 						<strong><?php echo esc_attr(get_search_query()); ?></strong>
 					</h1>
 
+					<div class="callout primary">
+						<p>You are currently searching on <strong><?php echo bloginfo('name') ;?></strong>. Would you like to search the entire <a href="http://krieger.jhu.edu/search/?q=<?php echo esc_attr(get_search_query()); ?>">Kreiger network</a>?</p>
+					</div>
+
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				 
 						<!-- To see additional archive styles, visit the /parts directory -->
@@ -34,6 +38,10 @@
 			<div class="hide-for-small-only medium-3 medium-pull-9 columns">
 
 		    	<?php joints_sidebar_nav(); ?>
+
+		    	<div class="sidebar-nav search">
+		    		<hr><?php get_search_form(); ?>
+		    	</div>
 		    	
 		    </div>	
 

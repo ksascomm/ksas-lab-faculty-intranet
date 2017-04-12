@@ -28,6 +28,10 @@
 			
 		    	<?php joints_sidebar_nav(); ?>
 
+		    	<div class="sidebar-nav search">
+		    		<hr><?php get_search_form(); ?>
+		    	</div>
+
 		    </div>
 
 		</div> <!-- end #inner-content -->

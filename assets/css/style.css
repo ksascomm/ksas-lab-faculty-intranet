@@ -7951,51 +7951,6 @@ body.rust .sidebar .nav a {
 .margin10 {
   margin-top: 1rem; }
 
-#search-bar {
-  background: #333;
-  color: #ccc;
-  font-family: "quadon", Arial, sans-serif; }
-  @media screen and (min-width: 790px) {
-    #search-bar {
-      margin-top: 1.5rem; } }
-  @media print, screen and (min-width: 64em) {
-    #search-bar {
-      margin-top: 3rem; } }
-  @media screen and (min-width: 75em) {
-    #search-bar {
-      padding-right: 2rem; } }
-  #search-bar input[type="text"] {
-    height: 31px;
-    background: white;
-    background: rgba(255, 255, 255, 0.75);
-    border-top-right-radius: .5rem;
-    border-bottom-right-radius: .5rem;
-    float: left;
-    width: 87%;
-    border: none; }
-  #search-bar input[type="submit"] {
-    background: #666;
-    height: 31px;
-    width: 30px;
-    font-family: 'flagship-icon';
-    border-top-left-radius: .5rem;
-    border-bottom-left-radius: .5rem;
-    font-size: 1rem;
-    border: none;
-    float: left;
-    color: #ccc;
-    margin-left: -15px; }
-  #search-bar::-webkit-input-placeholder {
-    color: #2C2C33; }
-  #search-bar:-moz-placeholder {
-    /* Firefox 18- */
-    color: #2C2C33; }
-  #search-bar::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #2C2C33; }
-  #search-bar:-ms-input-placeholder {
-    color: #2C2C33; }
-
 @media screen and (max-width: 39.9375em) {
   .menu > li:not(.menu-text) > a {
     font-size: 15px; } }
@@ -8252,6 +8207,43 @@ footer {
     color: #CCC;
     margin: 20px 0 0; }
 
+#search-bar {
+  margin-top: 1rem;
+  background: #333;
+  color: #ccc;
+  font-family: "quadon", Arial, sans-serif; }
+  #search-bar input[type="text"] {
+    height: 31px;
+    background: white;
+    background: rgba(255, 255, 255, 0.75);
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    float: left;
+    width: 92%;
+    border: none; }
+  #search-bar input[type="submit"] {
+    background: #666;
+    height: 31px;
+    width: 30px;
+    font-family: 'flagship-icon';
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    font-size: 1rem;
+    border: none;
+    float: left;
+    color: #ccc;
+    margin-left: -15px; }
+  #search-bar::-webkit-input-placeholder {
+    color: #2C2C33; }
+  #search-bar:-moz-placeholder {
+    /* Firefox 18- */
+    color: #2C2C33; }
+  #search-bar::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #2C2C33; }
+  #search-bar:-ms-input-placeholder {
+    color: #2C2C33; }
+
 /*********************
 FOUNDATION STYLES
 *********************/
@@ -8379,34 +8371,34 @@ COMMENT FORM STYLES
 .nocomments {
   margin: 0 20px 1.1em; }
 
-.docs-nav.menu {
-  margin: 0.5rem 0;
+.sidebar-nav.menu {
+  margin: 0.5rem 0 0;
   background: #e6e6e6;
   padding-top: 1rem;
   padding-bottom: 1rem; }
-  .docs-nav.menu li small {
+  .sidebar-nav.menu li small {
     color: #999;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 60%;
     display: block;
     margin-top: 5px; }
-  .docs-nav.menu a {
+  .sidebar-nav.menu a {
     font-size: 1.125rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem; }
-    .docs-nav.menu a:hover {
+    .sidebar-nav.menu a:hover {
       background: rgba(0, 0, 0, 0.05); }
-  .docs-nav.menu .current a {
+  .sidebar-nav.menu .current a {
     background: rgba(0, 0, 0, 0.05); }
-  .docs-nav.menu .label {
+  .sidebar-nav.menu .label {
     background-color: #ddd;
     color: #777;
     margin-left: 5px;
     padding: 0.22222rem 0.44444rem 0.22222rem;
     font-size: 0.61111rem; }
 
-.docs-nav-title {
+.sidebar-nav-title {
   background: #e6e6e6;
   text-transform: uppercase;
   font-size: 1.25rem;
@@ -8415,22 +8407,22 @@ COMMENT FORM STYLES
   padding-left: 0.9rem;
   margin-bottom: -10px; }
 
-.docs-nav-version {
-  padding-left: 0.9rem;
-  font-weight: bold;
-  font-size: 0.75rem;
-  margin-bottom: -0.5rem;
-  margin-top: -0.4rem; }
-  .menu .docs-nav-version a {
-    margin-left: 6px; }
-    .menu .docs-nav-version a:hover {
-      background: transparent; }
-
 .menu.vertical > li {
   margin-top: 0.5rem; }
 
 .menu.vertical.nested > li {
   margin-top: inherit; }
+
+.sidebar-nav.search {
+  background: #e6e6e6;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem; }
+  .sidebar-nav.search hr {
+    border: 0;
+    height: 0;
+    margin-top: 0px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
 
 /*********************
 PLUGIN STYLES

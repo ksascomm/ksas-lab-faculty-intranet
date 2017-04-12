@@ -2,6 +2,7 @@
 // Related Posts Function, matches posts by tags - call using joints_related_posts(); )
 function joints_related_posts() {
 	global $post;
+	$tag_arr = '';
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
 		foreach( $tags as $tag ) {
@@ -14,7 +15,7 @@ function joints_related_posts() {
 		);
 		$related_posts = get_posts( $args );
 		if($related_posts) {
-		echo '<h4>Related Posts</h4>';
+		echo __( '<h4>Related Posts</h4>', 'jointswp' );
 		echo '<ul id="joints-related-posts">';
 			foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
 				<li class="related_post">

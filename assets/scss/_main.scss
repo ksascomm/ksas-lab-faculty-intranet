@@ -469,62 +469,7 @@ body.rust {
 	margin-top: 1rem;
 }
 
-#search-bar {
 
-	@media screen and (min-width: 790px) {
-		margin-top: 1.5rem;
-	}
-	@include breakpoint (large) {
-		margin-top: 3rem;
-	}
-	@include breakpoint (xlarge) {
-		padding-right: 2rem;
-	}
-
-	background: #333;
-	color: #ccc;
-	font-family: $font-header;
-	input {
-		&[type="text"] {
-		    height: 31px;
-		    background: rgb(255, 255, 255);
-		    background: rgba(255, 255, 255, 0.75);
-		    border-top-right-radius: .5rem;
-		    border-bottom-right-radius: .5rem;
-		    float: left;
-		    width: 87%;
-		    border: none;
-		  }
-		  &[type="submit"] {
-		    background: #666;
-		    height: 31px;
-		    width: 30px;
-		    font-family: 'flagship-icon';
-		    border-top-left-radius: .5rem;
-		    border-bottom-left-radius: .5rem;
-		    font-size: 1rem;
-		    border: none;
-		    float: left;
-		    color: #ccc;
-		    margin-left: -15px;
-		  }
-	}
-	&::-webkit-input-placeholder {
-      color: $black;
-    }
-
-    &:-moz-placeholder { /* Firefox 18- */
-       color: $black;
-    }
-
-    &::-moz-placeholder {  /* Firefox 19+ */
-       color: $black;
-    }
-
-    &:-ms-input-placeholder {
-       color: $black;
-    }
-}
 
 
 @media screen and (max-width: 39.9375em) {
@@ -891,6 +836,54 @@ footer {
     margin: 20px 0 0;
   }
 }
+
+#search-bar {
+	margin-top: 1rem;
+	background: #333;
+	color: #ccc;
+	font-family: $font-header;
+	input {
+		&[type="text"] {
+		    height: 31px;
+		    background: rgb(255, 255, 255);
+		    background: rgba(255, 255, 255, 0.75);
+		    border-top-right-radius: .5rem;
+		    border-bottom-right-radius: .5rem;
+		    float: left;
+		    width: 92%;
+		    border: none;
+		  }
+		  &[type="submit"] {
+		    background: #666;
+		    height: 31px;
+		    width: 30px;
+		    font-family: 'flagship-icon';
+		    border-top-left-radius: .5rem;
+		    border-bottom-left-radius: .5rem;
+		    font-size: 1rem;
+		    border: none;
+		    float: left;
+		    color: #ccc;
+		    margin-left: -15px;
+		  }
+	}
+	&::-webkit-input-placeholder {
+      color: $black;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+       color: $black;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+       color: $black;
+    }
+
+    &:-ms-input-placeholder {
+       color: $black;
+    }
+}
+
 	
 /*********************
 FOUNDATION STYLES

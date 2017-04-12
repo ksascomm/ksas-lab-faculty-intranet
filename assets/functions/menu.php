@@ -92,8 +92,8 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 function joints_sidebar_nav() {
      wp_nav_menu(array(
         'container' => 'false',                           // Remove nav container
-        'menu_class' => 'menu vertical docs-nav',       // Adding custom nav class
-        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', // add data-attributes here
+        'menu_class' => 'menu vertical sidebar-nav',       // Adding custom nav class
+        'items_wrap' => '<ul id="%1$s" class="%2$s" role="navigation">%3$s</ul>', // add data-attributes here
         'theme_location' => 'main-nav',                 // Where it's located in the theme
         'depth' => 5,                                   // Limit the depth of the nav
         'fallback_cb' => false,                         // Fallback function (see below)

@@ -16,13 +16,6 @@
 			</li>
 		</ul>
 	</div>
-	<div class="top-bar-right float-right hide-for-small-only">
-		<form method="GET" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" id="search-bar">
-        	<input type="submit" class="icon-search" value="&#xe004;" />
-        	<label for="s" class="screen-reader-text"><?php _x( 'Search for:', 'label' ); ?></label>
-        	<input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="Search this site" aria-label="search"/>
-        </form>
-	</div>
 	<div class="top-bar-right float-right show-for-small-only">
 		<ul class="menu">
 			<li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li>

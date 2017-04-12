@@ -1,5 +1,5 @@
-.docs-nav.menu {
-  margin: 0.5rem 0;
+.sidebar-nav.menu {
+  margin: 0.5rem 0 0;
   background: $light-gray;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -36,7 +36,7 @@
   }
 }
 
-.docs-nav-title {
+.sidebar-nav-title {
   background: #e6e6e6;
   text-transform: uppercase;
   font-size: 1.25rem;
@@ -46,26 +46,23 @@
   margin-bottom: -10px;
 }
 
-.docs-nav-version {
-  padding-left: 0.9rem;
-  font-weight: bold;
-  font-size: 0.75rem;
-  margin-bottom: -0.5rem;
-  margin-top: -0.4rem;
-
-  .menu & a {
-    margin-left: 6px;
-
-    &:hover {
-      background: transparent;
-    }
-  }
-}
-
 .menu.vertical>li {
   margin-top: 0.5rem;
 }
 
 .menu.vertical.nested>li {
   margin-top: inherit;
+}
+
+.sidebar-nav.search {
+  background: $light-gray;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  hr {
+    border: 0;
+    height: 0;
+    margin-top: 0px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
 }

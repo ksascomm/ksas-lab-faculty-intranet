@@ -147,6 +147,10 @@
 		<div class="hide-for-small-only medium-3 medium-pull-9 columns">
 
 	    	<?php joints_sidebar_nav(); ?>
+
+	    	<div class="sidebar-nav search">
+	    		<hr><?php get_search_form(); ?>
+	    	</div>
 	    	
 	    </div>	
 	</div> <!-- end #inner-content -->
