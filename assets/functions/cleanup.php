@@ -12,9 +12,6 @@ function joints_start() {
     // clean up comment styles in the head
     add_action('wp_head', 'joints_remove_recent_comments_style', 1);
 
-    // launching this stuff after theme setup
-    joints_theme_support();
-
     // adding sidebars to Wordpress
     add_action( 'widgets_init', 'joints_register_sidebars' );
     // cleaning up excerpt
