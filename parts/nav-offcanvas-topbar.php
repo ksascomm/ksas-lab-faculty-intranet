@@ -4,13 +4,13 @@
 <div class="top-bar hide-for-print" id="top-bar-menu">
 	<div class="top-bar-left float-left">
 		<ul class="menu show-for-medium">
-			<li><a href="<?php echo network_site_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/images/krieger.png" alt="ksas logo"></a></li>
+			<li><a href="<?php echo network_site_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/images/krieger.png" alt="Krieger School of Arts and Sciences"></a></li>
 			<li><h1><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'title' ); ?><br>
 				<small><?php echo get_bloginfo ( 'description' ); ?></small></a></h1>
 			</li>
 		</ul>
 		<ul class="vertical menu show-for-small-only">
-			<li><img src="<?php echo get_template_directory_uri() ?>/assets/images/krieger.png" class="float-center" alt="jhu logo"></li>
+			<li><img src="<?php echo get_template_directory_uri() ?>/assets/images/krieger.png" class="float-center" alt="Krieger School of Arts and Sciences"></li>
 			<li><h1 class="center"><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'title' ); ?><br>
 				<small><?php echo get_bloginfo ( 'description' ); ?></small></a></h1>
 			</li>
