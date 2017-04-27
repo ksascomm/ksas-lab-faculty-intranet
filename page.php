@@ -14,6 +14,8 @@
 
 			    	<?php else :?>
 
+			    		<?php the_breadcrumb(); ?>
+
 			    		<?php get_template_part( 'parts/loop', 'page' ); ?>
 			    
 			    <?php endif; endwhile; endif; ?>							

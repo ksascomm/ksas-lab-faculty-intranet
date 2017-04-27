@@ -3,17 +3,17 @@
    Template Name: People Directory
    */
    ?>
-<?php get_header(); 
+<?php get_header();
 	$theme_option = flagship_sub_get_global_options();
 	$roles = get_terms('role', array(
 						'orderby' 		=> 'ID',
 						'order'			=> 'ASC',
 						'hide_empty'    => true,
-						)); 
+						));
 	$filters = get_terms('filter', array(
-						'orderby'       => 'name', 
+						'orderby'       => 'name',
 						'order'         => 'ASC',
-						'hide_empty'    => true, 
+						'hide_empty'    => true,
 						));
 	$role_slugs = array();
 	$filter_slugs = array();
@@ -33,6 +33,7 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<div class="row">
 					<div class="large-12 columns">
+            <?php the_breadcrumb(); ?>
 						<?php get_template_part( 'parts/loop', 'page' ); ?>
 					</div>
 				</div>
@@ -48,21 +49,21 @@
 								'meta_key' => 'ecpt_people_alpha',
 								'orderby' => 'meta_value',
 								'order' => 'ASC',
-								'posts_per_page' => '-1'));        	
-					
+								'posts_per_page' => '-1'));
+
 					if ($people_query->have_posts()) : ?>
 						<li class="person sub-head quicksearch-match <?php echo $role->slug; ?>"><h2 class="black capitalize"><?php echo $role_name; ?></h2></li>
-					
+
 
 				<?php while ($people_query->have_posts()) : $people_query->the_post(); ?>
 
 
-				<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) { 
-						get_template_part('parts/loop', 'single-profile'); 
-					} else { 
-						get_template_part( 'parts/loop', 'single-noprofile' ); 
+				<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) {
+						get_template_part('parts/loop', 'single-profile');
+					} else {
+						get_template_part( 'parts/loop', 'single-noprofile' );
 					} ?>
-					
+
 				<?php endwhile; endif; endforeach; wp_reset_postdata(); ?>
 
 				</ul>
@@ -79,7 +80,7 @@
 	    	<div class="sidebar-nav search">
 	    		<hr><?php get_search_form(); ?>
 	    	</div>
-	    	
+
 	    </div>
 
 	</div> <!-- end #inner-content -->

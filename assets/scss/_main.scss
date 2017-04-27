@@ -194,18 +194,6 @@ a, a:visited {
 	}
 }
 
-ul.breadcrumbs {
-	margin-left: 0rem !important;
-}
-
-.breadcrumbs {
-	margin-bottom: .5rem;
-	li {
-		padding-top: .75rem;
-	}
-}
-
-
 /*********************
 H1, H2, H3, H4, H5 P STYLES
 *********************/
@@ -219,7 +207,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 h1, .h1, .page-title, .entry-title.single-title {
 	font-size: 2rem;
-} 
+}
 
 h1.search-result {
   font-size: 1.25rem !important;
@@ -272,7 +260,7 @@ HEADER STYLES
 	 img.centered {
 	 	 display: block;
     margin-left: auto;
-    margin-right: auto 
+    margin-right: auto
 	 }
 	 h1 {
     	@include breakpoint(medium) {
@@ -316,7 +304,7 @@ HEADER STYLES
   background: none;
   }
 }
-    
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -478,6 +466,19 @@ body.rust {
 	}
 }
 
+ul.breadcrumbs {
+	margin-left: .5rem !important;
+  margin-bottom: 0px;
+	li {
+		font-size: 1rem;
+		text-transform: inherit;
+    padding-top: .75rem;
+		a:hover {
+			text-decoration: none;
+		}
+	}
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -547,15 +548,15 @@ POSTS & CONTENT STYLES
 
 .single-title,
 .page-title {
-	
+
 }
 
 .single-title {
-	
+
 }
 
 .page-title {
-	
+
 	// Remove Foundation vcard styling from author page titles
 	.vcard {
 		border: 0px;
@@ -567,14 +568,14 @@ POSTS & CONTENT STYLES
 
 }
 
-// Post meta  
+// Post meta
 .byline {
 	font-family: $font-subhead;
 	margin-bottom: 0rem;
 	time {}
 }
 
-// Entry content  
+// Entry content
 .entry-content {
 	  .imageblockleft {
 	    float: left;
@@ -590,29 +591,29 @@ POSTS & CONTENT STYLES
 	  }
 	  .wp-post-image {
 	  margin-bottom: inherit;
-	  }	
+	  }
 	img {
 		max-width: 100%;
 		height: auto;
 	}
 
-	.alignleft, img.alignleft { 
-		margin-right: 1.5em; 
-		display: inline; 
-		float: left; 
+	.alignleft, img.alignleft {
+		margin-right: 1.5em;
+		display: inline;
+		float: left;
 	}
-	.alignright, img.alignright { 
-		margin-left: 1.5em; 
-		display: inline; 
-		float: right; 
+	.alignright, img.alignright {
+		margin-left: 1.5em;
+		display: inline;
+		float: right;
 	}
-	.aligncenter, img.aligncenter { 
-		margin-right: auto; 
-		margin-left: auto; 
-		display: block; 
-		clear: both; 
+	.aligncenter, img.aligncenter {
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		clear: both;
 	}
-			
+
 	video, object {
 		max-width: 100%;
 		height: auto;
@@ -626,14 +627,14 @@ POSTS & CONTENT STYLES
 	@include breakpoint (xlarge) {
 		padding-right: 4rem;
 	}
-} 
+}
 
 .wp-caption {
 	max-width: 100%;
 	background: #eee;
 	padding: 5px;
 
-	// Images inside wp-caption  
+	// Images inside wp-caption
 	img {
 		max-width: 100%;
 		margin-bottom: 0;
@@ -645,7 +646,7 @@ POSTS & CONTENT STYLES
 		margin: 4px 0 7px;
 		text-align: center;
 	}
-} 
+}
 
 // Add Foundation styling to password protect button
 .post-password-form input[type="submit"] {
@@ -695,7 +696,7 @@ IMAGE GALLERY STYLES
 
 		dd {}
 
-} 
+}
 
 // Gallery caption styles
 .gallery-caption {}
@@ -720,7 +721,7 @@ SIDEBARS & ASIDES
 	background: $grey;
 		@include breakpoint (large) {
 			margin-top: 1rem;
-			margin-bottom: 1.5rem;	
+			margin-bottom: 1.5rem;
 		}
 		h5 {
 			padding-left:20px;
@@ -756,7 +757,7 @@ SIDEBARS & ASIDES
 
 			a {}
 
-			// deep nesting  
+			// deep nesting
 			ul {}
 
 		}
@@ -792,7 +793,7 @@ footer {
 	a, a:visited {
 	color: #CCC;
 	    &:hover, &:focus {
-			color: #ccc;    	
+			color: #ccc;
 	    }
 	}
 }
@@ -884,7 +885,7 @@ footer {
     }
 }
 
-	
+
 /*********************
 FOUNDATION STYLES
 *********************/

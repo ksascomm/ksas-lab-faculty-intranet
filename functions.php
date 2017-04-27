@@ -33,6 +33,9 @@ require_once(get_template_directory().'/assets/functions/searchwp.php');
 // FontAwesome alt tags to links for WCAG
 require_once(get_template_directory().'/assets/functions/fontawesome.php'); 
 
+// Breadcrumbs
+require_once(get_template_directory().'/assets/functions/breadcrumbs.php'); 
+
 // Adds site styles to the WordPress editor
 //require_once(get_template_directory().'/assets/functions/editor-styles.php'); 
 

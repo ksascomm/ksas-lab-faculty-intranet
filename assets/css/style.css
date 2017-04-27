@@ -7780,14 +7780,6 @@ a, a:visited {
     color: #2C2C33;
     border-bottom-style: solid; }
 
-ul.breadcrumbs {
-  margin-left: 0rem !important; }
-
-.breadcrumbs {
-  margin-bottom: .5rem; }
-  .breadcrumbs li {
-    padding-top: .75rem; }
-
 /*********************
 H1, H2, H3, H4, H5 P STYLES
 *********************/
@@ -7969,6 +7961,16 @@ body.rust .sidebar .nav a {
 @media screen and (max-width: 39.9375em) {
   .menu > li:not(.menu-text) > a {
     font-size: 15px; } }
+
+ul.breadcrumbs {
+  margin-left: .5rem !important;
+  margin-bottom: 0px; }
+  ul.breadcrumbs li {
+    font-size: 1rem;
+    text-transform: inherit;
+    padding-top: .75rem; }
+    ul.breadcrumbs li a:hover {
+      text-decoration: none; }
 
 /*********************
 POSTS & CONTENT STYLES

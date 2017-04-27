@@ -10,14 +10,12 @@
         echo '">';
         echo 'Home';
         echo '</a></li>';
-        if (is_category() || is_single()) {
-            echo '<li>';
-            the_category(' </li><li> ');
-            if (is_single()) {
-                echo '</li><li>';
+        if ( is_single()) {
+              echo '<li><a href="' . $home_url . '/archive">News Archive</a></li>';
+              echo '<li>';
                 the_title();
                 echo '</li>';
-            }
+
         } elseif (is_page()) {
             if($post->post_parent){
                 $anc = get_post_ancestors( $post->ID );
@@ -39,19 +37,13 @@
     elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
     elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
     elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
-
-
-
-
-  
-
-elseif (is_home()) { ?>
+    elseif (is_home()) { ?>
 
                 <li><a href="<?php echo $home_url; ?>">Home</a></li>
                 <li><a href="<?php echo $home_url; ?>/about">About</a></li>
                 <li><a href="<?php echo $home_url; ?>/about/archive">News Archive</a></li>
 
-        <? }   
+        <? }
 
         echo '</ul>';
-} 
+}
