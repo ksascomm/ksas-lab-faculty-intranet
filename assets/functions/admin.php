@@ -122,16 +122,8 @@ function academic_flagship_theme_support() {
 	set_post_thumbnail_size( 125, 125, true );   // default thumb size
 	add_image_size( 'rss', 300, 150, true );
 	add_image_size( 'directory', 150, 216, true );
-	add_image_size( 'exhibits', 253, 150, true );
 	add_image_size( 'news', 175, 175, true );
 	add_theme_support( 'automatic-feed-links' ); // rss thingy
-	$bg_args = array(
-		'default-color'          => '#fff',
-		'wp-head-callback'       => '_custom_background_cb',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => ''
-	);
-	add_theme_support( 'custom-background', $bg_args  );
 }
 
 // Initiate Theme Support
