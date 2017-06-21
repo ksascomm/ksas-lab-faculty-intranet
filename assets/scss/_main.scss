@@ -351,11 +351,26 @@ body.black {
 			border-color: #fff transparent transparent;
 		}
 	}
-	.sidebar .nav {
+	.sidebar-nav.menu {
 		a {
 			color: $black;
 		}
 	}
+	#main {
+		a {
+			color: $black;
+			border-bottom: .125em dotted;
+			border-bottom-color: rgba(0,0,0,.2);
+			&:hover, &:active {
+			  	color: $black;
+			  	border-bottom-style: solid;
+			}
+		}
+	}
+	.button {
+		background-color: $black;
+	}
+
 }
 body.green {
 	.top-bar, #sidebar_header {
@@ -370,10 +385,24 @@ body.green {
 			border-color: #fff transparent transparent;
 		}
 	}
-	.sidebar .nav {
+	.sidebar-nav.menu {
 		a {
 			color: $green;
 		}
+	}
+	#main {
+		a {
+			color: $green;
+			border-bottom: .125em dotted;
+			border-bottom-color: rgba(0,0,0,.2);
+			&:hover, &:active {
+			  	color: $black;
+			  	border-bottom-style: solid;
+			}
+		}
+	}
+	.button {
+		background-color: $green;
 	}
 }
 body.red {
@@ -389,10 +418,24 @@ body.red {
 			border-color: #fff transparent transparent;
 		}
 	}
-	.sidebar .nav {
+	.sidebar-nav.menu {
 		a {
 			color: $red;
 		}
+	}
+	#main {
+		a {
+			color: $red;
+			border-bottom: .125em dotted;
+			border-bottom-color: rgba(0,0,0,.2);
+			&:hover, &:active {
+			  	color: $black;
+			  	border-bottom-style: solid;
+			}
+		}
+	}
+	.button {
+		background-color: $red;
 	}
 }
 body.rust {
@@ -408,10 +451,24 @@ body.rust {
 			border-color: #fff transparent transparent;
 		}
 	}
-	.sidebar .nav {
+	.sidebar-nav.menu {
 		a {
 			color: $rust;
 		}
+	}
+	#main {
+		a {
+			color: $rust;
+			border-bottom: .125em dotted;
+			border-bottom-color: rgba(0,0,0,.2);
+			&:hover, &:active {
+			  	color: $black;
+			  	border-bottom-style: solid;
+			}
+		}
+	}
+	.button {
+		background-color: $rust;
 	}
 }
 
