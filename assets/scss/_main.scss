@@ -370,6 +370,12 @@ body.black {
 	.button {
 		background-color: $black;
 	}
+	.ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
+		color: $black;
+	}
+	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
+		background: $black;
+	}	
 
 }
 body.green {
@@ -404,6 +410,12 @@ body.green {
 	.button {
 		background-color: $green;
 	}
+	.ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
+		color: $green;
+	}
+	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
+		background: $green;
+	}
 }
 body.red {
 	.top-bar, #sidebar_header {
@@ -437,6 +449,12 @@ body.red {
 	.button {
 		background-color: $red;
 	}
+	.ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
+		color: $red;
+	}
+	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
+		background: $red;
+	}
 }
 body.rust {
 	.top-bar, #sidebar_header {
@@ -469,6 +487,12 @@ body.rust {
 	}
 	.button {
 		background-color: $rust;
+	}
+	.ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
+		color: $rust;
+	}
+	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
+		background: $rust;
 	}
 }
 
@@ -681,8 +705,16 @@ POSTS & CONTENT STYLES
 		border: 1px solid #cecece;
 		padding: 10px;
 		}
+	@include breakpoint (large) {
+		padding-right: 2rem;
+	}	
 	@include breakpoint (xlarge) {
 		padding-right: 4rem;
+	}
+	@include breakpoint (large) {
+		.ai1ec-main-container {
+			width: 75%;
+		}
 	}
 }
 

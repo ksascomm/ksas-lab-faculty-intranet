@@ -7905,6 +7905,12 @@ body.black #main a {
 body.black .button {
   background-color: #2C2C33; }
 
+body.black .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, body.black .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
+  color: #2C2C33; }
+
+body.black .ai1ec-agenda-view .ai1ec-month, body.black .ai1ec-agenda-widget-view .ai1ec-month {
+  background: #2C2C33; }
+
 body.green .top-bar, body.green #sidebar_header {
   background-color: #007a53; }
   body.green .top-bar ul, body.green #sidebar_header ul {
@@ -7927,6 +7933,12 @@ body.green #main a {
 
 body.green .button {
   background-color: #007a53; }
+
+body.green .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, body.green .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
+  color: #007a53; }
+
+body.green .ai1ec-agenda-view .ai1ec-month, body.green .ai1ec-agenda-widget-view .ai1ec-month {
+  background: #007a53; }
 
 body.red .top-bar, body.red #sidebar_header {
   background-color: #8a2a2b; }
@@ -7951,6 +7963,12 @@ body.red #main a {
 body.red .button {
   background-color: #8a2a2b; }
 
+body.red .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, body.red .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
+  color: #8a2a2b; }
+
+body.red .ai1ec-agenda-view .ai1ec-month, body.red .ai1ec-agenda-widget-view .ai1ec-month {
+  background: #8a2a2b; }
+
 body.rust .top-bar, body.rust #sidebar_header {
   background-color: #6f2c3f; }
   body.rust .top-bar ul, body.rust #sidebar_header ul {
@@ -7973,6 +7991,12 @@ body.rust #main a {
 
 body.rust .button {
   background-color: #6f2c3f; }
+
+body.rust .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, body.rust .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
+  color: #6f2c3f; }
+
+body.rust .ai1ec-agenda-view .ai1ec-month, body.rust .ai1ec-agenda-widget-view .ai1ec-month {
+  background: #6f2c3f; }
 
 .dropdown.menu .is-dropdown-submenu-parent.is-right-arrow > a::after {
   border-color: transparent transparent transparent #fff; }
@@ -8117,9 +8141,17 @@ POSTS & CONTENT STYLES
   border: 1px solid #cecece;
   padding: 10px; }
 
+@media print, screen and (min-width: 64em) {
+  .entry-content {
+    padding-right: 2rem; } }
+
 @media screen and (min-width: 75em) {
   .entry-content {
     padding-right: 4rem; } }
+
+@media print, screen and (min-width: 64em) {
+  .entry-content .ai1ec-main-container {
+    width: 75%; } }
 
 .wp-caption {
   max-width: 100%;
@@ -8550,13 +8582,13 @@ footer.timely.ai1ec-event-footer {
   color: #2C2C33 !important; }
 
 .ai1ec-agenda-widget-view .ai1ec-month {
-  background: #005eb8 !important; }
+  background: #005eb8; }
 
 .ai1ec-agenda-view .ai1ec-month {
-  background: #005eb8 !important; }
+  background: #005eb8; }
 
 .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title, .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title {
-  color: #005eb8 !important; }
+  color: #005eb8; }
 
 .entry-content .timely a:hover, .comment-content .timely a:hover, .site-footer .widget .timely a:hover, .entry-content .timely a:visited, .comment-content .timely a:visited, .site-footer .widget .timely a:visited, .ai1ec-agenda-view .ai1ec-event:hover .ai1ec-event-title {
   color: #2C2C33 !important; }

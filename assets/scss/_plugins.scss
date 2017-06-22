@@ -80,16 +80,16 @@ footer.timely.ai1ec-event-footer {
     }
   }
   .ai1ec-month {
-    background: $primary-color !important;
+    background: $primary-color;
   }
 }
 
 .ai1ec-agenda-view .ai1ec-month {
-  background: $primary-color !important;
+  background: $primary-color;
 }
 
 .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title, .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title {
-  color: $primary-color !important;
+  color: $primary-color;
 }
 
 .entry-content .timely a:hover, .comment-content .timely a:hover, .site-footer .widget .timely a:hover, .entry-content .timely a:visited, .comment-content .timely a:visited, .site-footer .widget .timely a:visited, .ai1ec-agenda-view .ai1ec-event:hover .ai1ec-event-title {
