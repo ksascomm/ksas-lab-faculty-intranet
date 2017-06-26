@@ -767,6 +767,14 @@ img.news {
   }
 }
 
+.featured-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: rem-calc(200);
+  position: relative;
+ }
+
 
 /*********************
 IMAGE GALLERY STYLES

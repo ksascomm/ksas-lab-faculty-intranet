@@ -8208,6 +8208,13 @@ img.news {
 #main a[href$=".ppt"]:after, #main a[href$=".pptx"]:after {
   content: '\f1c4'; }
 
+.featured-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 12.5rem;
+  position: relative; }
+
 /*********************
 IMAGE GALLERY STYLES
 *********************/

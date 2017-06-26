@@ -10,6 +10,8 @@
  
 					<?php if ( get_post_meta($post->ID, 'ecpt_page_sidebar', true) ) : ?>
 
+						<?php the_breadcrumb(); ?>
+
 			    		<?php get_template_part( 'parts/loop', 'page-sidebar' ); ?>
 
 			    	<?php else :?>
