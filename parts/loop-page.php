@@ -18,10 +18,10 @@
 		<h1 class="page-title"><?php the_title(); ?></h1>
 		
 	<?php endif;?>
-
-    <div class="entry-content" itemprop="articleBody">
-	    <?php the_content(); ?>
-	    <?php wp_link_pages(); ?>
-	</div> <!-- end article section -->
-						
+	<div class="row">
+	    <div class="entry-content" itemprop="articleBody">
+		    <?php the_content(); ?>
+		    <?php wp_link_pages(); ?>
+		</div> <!-- end article section -->
+	</div>						
 </article> <!-- end article -->
