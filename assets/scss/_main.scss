@@ -773,6 +773,9 @@ img.news {
   background-repeat: no-repeat;
   height: rem-calc(200);
   position: relative;
+  @include breakpoint(large) {
+  	margin-right: 3rem;
+  }
  }
 
 

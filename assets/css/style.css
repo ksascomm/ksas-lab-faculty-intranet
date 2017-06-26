@@ -8214,6 +8214,9 @@ img.news {
   background-repeat: no-repeat;
   height: 12.5rem;
   position: relative; }
+  @media print, screen and (min-width: 64em) {
+    .featured-hero {
+      margin-right: 3rem; } }
 
 /*********************
 IMAGE GALLERY STYLES
