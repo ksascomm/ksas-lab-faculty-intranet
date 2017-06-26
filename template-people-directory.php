@@ -10,21 +10,11 @@
 						'order'			=> 'ASC',
 						'hide_empty'    => true,
 						));
-	$filters = get_terms('filter', array(
-						'orderby'       => 'name',
-						'order'         => 'ASC',
-						'hide_empty'    => true,
-						));
 	$role_slugs = array();
-	$filter_slugs = array();
 	foreach($roles as $role) {
 		$role_slugs[] = $role->slug;
 	}
 	$role_classes = implode(' ', $role_slugs);
-	foreach($filters as $filter) {
-		$filter_slugs[] = $filter->slug;
-	}
-	$filter_classes = implode(' ', $filter_slugs);
 	?>
 
 <div id="content">
@@ -33,13 +23,13 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<div class="row">
 					<div class="large-12 columns">
-            <?php the_breadcrumb(); ?>
+            			<?php the_breadcrumb(); ?>
 						<?php get_template_part( 'parts/loop', 'page' ); ?>
 					</div>
 				</div>
 			<?php endwhile; endif; ?>
 		    <div class="row" id="fields_container">
-				<ul id="directory" data-isotope='{ "itemSelector": ".person", "layoutMode": "masonry" }'>
+				<ul id="directory">
 				<?php foreach($roles as $role) : ?>
 					<?php $role_slug = $role->slug;
 					$role_name = $role->name;

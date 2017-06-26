@@ -6,7 +6,7 @@
 			<?php } ?>
 			<h3 class="no-margin">
 			<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
-				<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" title="<?php the_title(); ?>">
+				<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" title="<?php the_title(); ?>" target="_blank">
 					<?php the_title(); ?>
 				</a>
 				<?php else : ?>

@@ -5,45 +5,36 @@
 	<div id="inner-content" class="expanded row">
 
 		 <main id="main" class="medium-9 medium-push-3 columns" role="main">
-		
+				<ul class="breadcrumbs">
+					<li><a href="<?php echo site_url();?>" title="Home">Home</a>
+					<li><a href="<?php echo site_url();?>/people/" title="People">People</a></li>
+					<li><?php echo the_title();?></li>
+				</ul>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-				<?php if (has_term('', 'role') && !has_term('job-market-candidate', 'role')) : ?>
-					<div class="row">
-						<div class="small-12 medium-3 medium-offset-9 columns">
-							<label for="jump">
-								<h5>Jump to Faculty Member</h5>
-							</label>
-							<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
-								<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-									<option>---<?php the_title(); ?></option> 
-								<?php endwhile; endif; ?>
-								<?php $jump_menu_query = new WP_Query(array(
-									'post-type' => 'people',
-									'role' => 'faculty',
-									'meta_key' => 'ecpt_people_alpha',
-									'orderby' => 'meta_value',
-									'order' => 'ASC',
-									'posts_per_page' => '-1')); ?>
-								<?php while ($jump_menu_query->have_posts()) : $jump_menu_query->the_post(); ?>				
-									<option value="<?php the_permalink() ?>"><?php the_title(); ?></option>
-								<?php endwhile; ?>
-							</select>
-						</div>
-					</div>
-				<?php endif; ?>	
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+						<div class="row">
+							<div class="small-12 columns">
+						
+							<header class="article-header">	
+								<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+						   		<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
+						   			<h2><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h2>
+						  		<?php endif; ?>
+							</header>
+							</div>
+						</div>
+						<div class="row">
+
 						<div class="small-12 medium-4 columns bio">
 
-							<header class="article-header">	
 							<?php if ( has_post_thumbnail()) { ?> 
 									<?php the_post_thumbnail('full', array('class' => 'headshot')); ?>
 								<?php } ?>			    
-									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-						   <?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
-						   		<h2><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h2>
-						   <?php endif; ?>
-							</header>
+								
+						</div>
+					<div class="small-12 medium-8 columns end">
+
 						    <p class="listing">
 						    	<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
 						    		<span class="fa fa-map-marker" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br>
@@ -84,62 +75,7 @@
 						    		<span class="fa fa-windows"></span> <a href="https://academic.microsoft.com/#/detail/<?php echo get_post_meta($post->ID, 'ecpt_microsoft_id', true); ?>" target="_blank"> Microsoft Academic Profile</a>
 								<?php endif; ?>
 						    </p>
-						</div>
-					<div class="small-12 medium-8 columns end">
-					<?php if (has_term('', 'role') && !has_term('job-market-candidate', 'role')) : ?>
-						<ul class="tabs" data-tabs id="profile-tabs">
-							<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) : ?>
-								<li class="tabs-title is-active"><a href="#bioTab">Biography</a></li>
-							<?php endif; ?>
-							<?php if ( get_post_meta($post->ID, 'ecpt_research', true) ) : ?>
-								 <li class="tabs-title"><a href="#researchTab">Research</a></li>
-							<?php endif; ?>
-							
-							<?php if ( get_post_meta($post->ID, 'ecpt_teaching', true) ) : ?>
-								 <li class="tabs-title"><a href="#teachingTab">Teaching</a></li>
-							<?php endif; ?>
-							
-							<?php if ( get_post_meta($post->ID, 'ecpt_publications', true)) : ?>
-									 <li class="tabs-title"><a href="#publicationsTab">Publications</a></li>
-							<?php endif; ?>
-							<?php if ( get_post_meta($post->ID, 'ecpt_extra_tab_title', true) ) : ?>
-								 <li class="tabs-title"><a href="#extraTab"><?php echo get_post_meta($post->ID, 'ecpt_extra_tab_title', true); ?></a></li>
-							<?php endif; ?>
-							<?php if ( get_post_meta($post->ID, 'ecpt_extra_tab_title2', true) ) : ?>
-								 <li class="tabs-title"><a href="#extra2Tab"><?php echo get_post_meta($post->ID, 'ecpt_extra_tab_title2', true); ?></a></li>
-							<?php endif; ?>			  
-						</ul>
-						
-						<div class="tabs-content" data-tabs-content="profile-tabs">		
-							<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) : ?>
-								<div class="tabs-panel is-active" id="bioTab" itemprop="articleBody">
-									<?php echo get_post_meta($post->ID, 'ecpt_bio', true); ?>
-								</div>
-							<?php endif; ?>
-							
-							<?php if ( get_post_meta($post->ID, 'ecpt_research', true) ) : ?>
-								 <div class="tabs-panel" id="researchTab"><?php echo get_post_meta($post->ID, 'ecpt_research', true); ?></div>
-							<?php endif; ?>
-							
-							<?php if ( get_post_meta($post->ID, 'ecpt_teaching', true) ) : ?>
-								 <div class="tabs-panel" id="teachingTab"><?php echo get_post_meta($post->ID, 'ecpt_teaching', true); ?></div>
-							<?php endif; ?>
-							
-							<?php if ( get_post_meta($post->ID, 'ecpt_publications', true)) : ?>
-								 <div class="tabs-panel" id="publicationsTab">
-									<?php if ( get_post_meta($post->ID, 'ecpt_publications', true) ) : echo get_post_meta($post->ID, 'ecpt_publications', true); endif; ?>
-								</div>
-							<?php endif; ?>
-						
-							<?php if ( get_post_meta($post->ID, 'ecpt_extra_tab', true) ) : ?>
-								<div class="content"  id="extraTab"><?php echo get_post_meta($post->ID, 'ecpt_extra_tab', true); ?></div>
-							<?php endif; ?>
-							
-							<?php if ( get_post_meta($post->ID, 'ecpt_extra_tab2', true) ) : ?>
-								 <div class="tabs-panel" id="extra2Tab"><?php echo get_post_meta($post->ID, 'ecpt_extra_tab2', true); ?></div>
-							<?php endif; ?>			
-						</div>
-					<?php endif; ?>
+					</div>
 					</div>
 			<?php endwhile; endif; ?>
 			</article>	
@@ -152,6 +88,29 @@
 	    		<hr><?php get_search_form(); ?>
 	    	</div>
 	    	
+		<?php if (has_term('', 'role') && !has_term('job-market-candidate', 'role')) : ?>
+					<div class="sidebar-nav search">
+							<hr><label for="jump">
+								<h5>Jump to Faculty Member</h5>
+							</label>
+							<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+								<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+									<option>---<?php the_title(); ?></option> 
+								<?php endwhile; endif; ?>
+								<?php $jump_menu_query = new WP_Query(array(
+									'post-type' => 'people',
+									'role' => 'faculty',
+									'meta_key' => 'ecpt_people_alpha',
+									'orderby' => 'meta_value',
+									'order' => 'ASC',
+									'posts_per_page' => '-1')); ?>
+								<?php while ($jump_menu_query->have_posts()) : $jump_menu_query->the_post(); ?>				
+									<option value="<?php the_permalink() ?>"><?php the_title(); ?></option>
+								<?php endwhile; ?>
+							</select>
+					</div>
+				<?php endif; ?>	
+
 	    </div>	
 	</div> <!-- end #inner-content -->
 
