@@ -7869,7 +7869,17 @@ NAVIGATION STYLES
   .top-bar .is-dropdown-submenu-parent.is-down-arrow > a::after {
     border-color: #fff transparent transparent; }
   .top-bar img {
-    width: 300px; }
+    padding: .5rem 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 375px; }
+    @media print, screen and (min-width: 40em) {
+      .top-bar img {
+        max-width: 400px; } }
+    @media print, screen and (min-width: 64em) {
+      .top-bar img {
+        max-width: 350px; } }
   .top-bar ul {
     background-color: #005eb8; }
     .top-bar ul li {

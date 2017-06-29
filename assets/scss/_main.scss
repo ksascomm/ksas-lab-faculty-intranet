@@ -318,7 +318,20 @@ NAVIGATION STYLES
 		border-color: #fff transparent transparent;
 	}
 	img {
-		width: 300px;
+	padding: .5rem 1rem;
+	//this is when menu breaks line
+	@include breakpoint (small) {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  max-width: 375px;
+	}
+	@include breakpoint (medium) {
+	  max-width: 400px;
+	}
+	@include breakpoint (large) {
+	  max-width: 350px;
+	}
 	}
 	ul {
 		background-color: $primary-color;
