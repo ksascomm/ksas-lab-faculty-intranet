@@ -7873,13 +7873,13 @@ NAVIGATION STYLES
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 375px; }
+    max-width: 250px; }
     @media print, screen and (min-width: 40em) {
       .top-bar img {
-        max-width: 400px; } }
+        max-width: 275px; } }
     @media print, screen and (min-width: 64em) {
       .top-bar img {
-        max-width: 350px; } }
+        max-width: 300px; } }
   .top-bar ul {
     background-color: #005eb8; }
     .top-bar ul li {

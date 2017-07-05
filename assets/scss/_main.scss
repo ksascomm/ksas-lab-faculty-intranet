@@ -324,13 +324,13 @@ NAVIGATION STYLES
 	  display: block;
 	  margin-left: auto;
 	  margin-right: auto;
-	  max-width: 375px;
+	  max-width: 250px;
 	}
 	@include breakpoint (medium) {
-	  max-width: 400px;
+	  max-width: 275px;
 	}
 	@include breakpoint (large) {
-	  max-width: 350px;
+	  max-width: 300px;
 	}
 	}
 	ul {
