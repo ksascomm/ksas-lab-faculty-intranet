@@ -22,7 +22,7 @@ var config = {
      bowerDir: './bower_components' 
 }
 
-var URL = 'pineapple.dev/';
+var URL = 'pineapple.dev/template-research/';
 
 // IF YOU UPDATE FOUNDATION VIA BOWER, RUN THIS TO SAVE UPDATED FILES TO /VENDOR
 gulp.task('bower', function() {
@@ -174,4 +174,27 @@ gulp.task('watch', ['styles', 'browsersync', 'images', 'icons'], function() {
   // Watch foundation-js files
   gulp.watch('./vendor/foundation-sites/js/*.js', ['foundation-js']);
 
+});
+
+// PHP Code Sniffer task
+gulp.task('phpcs', function() {
+  return gulp.src(PATHS.phpcs)
+    .pipe(phpcs({
+      bin: 'wpcs/vendor/bin/phpcs',
+      standard: './codesniffer.ruleset.xml',
+      showSniffCode: true,
+    }))
+    .pipe($.phpcs.reporter('log'));
+});
+
+// PHP Code Beautifier task
+gulp.task('phpcbf', function () {
+  return gulp.src(PATHS.phpcs)
+  .pipe($.phpcbf({
+    bin: 'wpcs/vendor/bin/phpcbf',
+    standard: './codesniffer.ruleset.xml',
+    warningSeverity: 0
+  }))
+  .on('error', $.util.log)
+  .pipe(gulp.dest('.'));
 });

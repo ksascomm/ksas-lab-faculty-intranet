@@ -388,8 +388,13 @@ body.black {
 	}
 	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
 		background: $black;
-	}	
-
+	}
+	.roof {
+		background-color: $black;
+		.menu.simple a.button {
+			background-color: lighten($black, 10%);
+		}
+	}
 }
 body.green {
 	.top-bar, #sidebar_header {
@@ -428,6 +433,12 @@ body.green {
 	}
 	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
 		background: $green;
+	}
+	.roof {
+		background-color: $green;
+		.menu.simple a.button {
+			background-color: darken($green, 10%);
+		}
 	}
 }
 body.red {
@@ -468,6 +479,12 @@ body.red {
 	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
 		background: $red;
 	}
+	.roof {
+		background-color: $red;
+		.menu.simple a.button {
+			background-color: darken($red, 10%);
+		}
+	}
 }
 body.rust {
 	.top-bar, #sidebar_header {
@@ -506,6 +523,12 @@ body.rust {
 	}
 	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
 		background: $rust;
+	}
+	.roof {
+		background-color: $rust;
+		.menu.simple a.button {
+			background-color: darken($rust, 10%);
+		}
 	}
 }
 
@@ -1011,4 +1034,122 @@ FOUNDATION STYLES
 	font-size: 16px;
 	font-weight: bold;
 	background: #f6f6f6;
+}
+
+.roof {
+  background-color: $primary-color;
+  width: 100%;
+  padding: .5rem 0;
+  li.roof-padding {
+    padding-top: .85rem;
+  }
+  a {
+    color: $white;
+  &:hover {
+    color: $black;
+  }
+  }
+  li.bar {
+    a:after { 
+      content: "|";
+      color: $black;
+      @include breakpoint (medium) {
+        margin-left: 1em; }
+      }
+  }
+  form { 
+     @include breakpoint (medium) {
+      width: 200px;
+      margin-top: -5px;
+    }
+  }
+  input {
+    height: 1.75rem;
+    &[type="submit"] {
+      font-family: $font-awesome;
+    }
+  }
+  .button {
+    background-color: #418def;
+  }
+  .roof-menu {
+    font-size: 1rem;
+     @include breakpoint (medium) {
+        float: right;
+        padding-left: 1rem;
+      }
+      @include breakpoint (large) {
+         //float: right;
+      }
+  }
+  .menu.simple {
+    a.button {
+      padding: 0.7rem 1rem;
+    }
+  }
+}
+
+div#offCanvasTop1 {
+  background: $white;
+}
+
+#global-links {
+  h3 {
+    font-size: 1.25rem;
+    font-family: $font-stack-semibold;
+  }
+  .menu {
+  display: inherit;
+    li {
+      display: list-item;
+      a {
+        padding: 0.35rem 1rem; 
+        font-family: $font-stack-bold;
+        color: $primary-color;
+        &:hover, &:active {
+            color: $black;
+        }
+      }      
+    }
+  }
+}
+
+.off-canvas {
+  background: $black;
+  .menu.nested {
+  }
+  .menu > li > a {
+  	font-size: 1rem;
+    color: $white;
+    font-family: $font-stack-semibold;
+    &:hover {
+      background: $darkgrey;
+    }
+  }
+    // submenu arrow
+  .is-accordion-submenu-parent {
+    > a::after {
+      border-color: $white transparent transparent;
+    }
+    &.active > a::after {
+      border-color: $white transparent transparent;
+    }
+  }
+    form { 
+    margin-top: 1rem;
+  }
+  input {
+    &[type="submit"] {
+      font-family: $font-awesome;
+    }
+  }
+  .input-group-button {
+     @include breakpoint (small) {
+       @include grid-column(12);
+     }
+    .button {
+      background-color: #418def;
+      width: 100%;
+    }
+  }
 }

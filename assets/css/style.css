@@ -7034,6 +7034,16 @@ TYPOGRAPHY
   src: url("../fonts/gentona/Gentona-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-Book.woff") format("woff"), url("../fonts/gentona/Gentona-Book.ttf") format("truetype"); }
 
 @font-face {
+  font-family: 'gentona-bold';
+  src: url("../fonts/gentona/Gentona-Bold.eot");
+  src: url("../fonts/gentona/Gentona-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-Bold.woff") format("woff"), url("../fonts/gentona/Gentona-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'gentona-semibold';
+  src: url("../fonts/gentona/Gentona-SemiBold.eot");
+  src: url("../fonts/gentona/Gentona-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-SemiBold.woff") format("woff"), url("../fonts/gentona/Gentona-SemiBold.ttf") format("truetype"); }
+
+@font-face {
   font-family: 'gentona-light';
   src: url("../fonts/gentona/Gentona-Light.eot");
   src: url("../fonts/gentona/Gentona-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-Light.woff") format("woff"), url("../fonts/gentona/Gentona-Light.ttf") format("truetype"); }
@@ -7921,6 +7931,11 @@ body.black .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, body.black .ai1ec
 body.black .ai1ec-agenda-view .ai1ec-month, body.black .ai1ec-agenda-widget-view .ai1ec-month {
   background: #2C2C33; }
 
+body.black .roof {
+  background-color: #2C2C33; }
+  body.black .roof .menu.simple a.button {
+    background-color: #44444e; }
+
 body.green .top-bar, body.green #sidebar_header {
   background-color: #007a53; }
   body.green .top-bar ul, body.green #sidebar_header ul {
@@ -7949,6 +7964,11 @@ body.green .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, body.green .ai1ec
 
 body.green .ai1ec-agenda-view .ai1ec-month, body.green .ai1ec-agenda-widget-view .ai1ec-month {
   background: #007a53; }
+
+body.green .roof {
+  background-color: #007a53; }
+  body.green .roof .menu.simple a.button {
+    background-color: #004730; }
 
 body.red .top-bar, body.red #sidebar_header {
   background-color: #8a2a2b; }
@@ -7979,6 +7999,11 @@ body.red .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, body.red .ai1ec-age
 body.red .ai1ec-agenda-view .ai1ec-month, body.red .ai1ec-agenda-widget-view .ai1ec-month {
   background: #8a2a2b; }
 
+body.red .roof {
+  background-color: #8a2a2b; }
+  body.red .roof .menu.simple a.button {
+    background-color: #631e1f; }
+
 body.rust .top-bar, body.rust #sidebar_header {
   background-color: #6f2c3f; }
   body.rust .top-bar ul, body.rust #sidebar_header ul {
@@ -8007,6 +8032,11 @@ body.rust .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, body.rust .ai1ec-a
 
 body.rust .ai1ec-agenda-view .ai1ec-month, body.rust .ai1ec-agenda-widget-view .ai1ec-month {
   background: #6f2c3f; }
+
+body.rust .roof {
+  background-color: #6f2c3f; }
+  body.rust .roof .menu.simple a.button {
+    background-color: #4a1e2a; }
 
 .dropdown.menu .is-dropdown-submenu-parent.is-right-arrow > a::after {
   border-color: transparent transparent transparent #fff; }
@@ -8367,6 +8397,90 @@ FOUNDATION STYLES
   font-size: 16px;
   font-weight: bold;
   background: #f6f6f6; }
+
+.roof {
+  background-color: #005eb8;
+  width: 100%;
+  padding: .5rem 0; }
+  .roof li.roof-padding {
+    padding-top: .85rem; }
+  .roof a {
+    color: #fefefe; }
+    .roof a:hover {
+      color: #2C2C33; }
+  .roof li.bar a:after {
+    content: "|";
+    color: #2C2C33; }
+    @media print, screen and (min-width: 40em) {
+      .roof li.bar a:after {
+        margin-left: 1em; } }
+  @media print, screen and (min-width: 40em) {
+    .roof form {
+      width: 200px;
+      margin-top: -5px; } }
+  .roof input {
+    height: 1.75rem; }
+    .roof input[type="submit"] {
+      font-family: FontAwesome, "gentona-bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .roof .button {
+    background-color: #418def; }
+  .roof .roof-menu {
+    font-size: 1rem; }
+    @media print, screen and (min-width: 40em) {
+      .roof .roof-menu {
+        float: right;
+        padding-left: 1rem; } }
+  .roof .menu.simple a.button {
+    padding: 0.7rem 1rem; }
+
+div#offCanvasTop1 {
+  background: #fefefe; }
+
+#global-links h3 {
+  font-size: 1.25rem;
+  font-family: "gentona-semibold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+
+#global-links .menu {
+  display: inherit; }
+  #global-links .menu li {
+    display: list-item; }
+    #global-links .menu li a {
+      padding: 0.35rem 1rem;
+      font-family: "gentona-bold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      color: #005eb8; }
+      #global-links .menu li a:hover, #global-links .menu li a:active {
+        color: #2C2C33; }
+
+.off-canvas {
+  background: #2C2C33; }
+  .off-canvas .menu > li > a {
+    font-size: 1rem;
+    color: #fefefe;
+    font-family: "gentona-semibold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+    .off-canvas .menu > li > a:hover {
+      background: #b4b2ad; }
+  .off-canvas .is-accordion-submenu-parent > a::after {
+    border-color: #fefefe transparent transparent; }
+  .off-canvas .is-accordion-submenu-parent.active > a::after {
+    border-color: #fefefe transparent transparent; }
+  .off-canvas form {
+    margin-top: 1rem; }
+  .off-canvas input[type="submit"] {
+    font-family: FontAwesome, "gentona-bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .off-canvas .input-group-button {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem; }
+    @media print, screen and (min-width: 40em) {
+      .off-canvas .input-group-button {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    .off-canvas .input-group-button:last-child:not(:first-child) {
+      float: right; }
+    .off-canvas .input-group-button .button {
+      background-color: #418def;
+      width: 100%; }
 
 /*********************
 COMMENT STYLES
