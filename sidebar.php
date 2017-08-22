@@ -2,4 +2,5 @@
 
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
-<?php endif; ?>
+<?php
+endif;

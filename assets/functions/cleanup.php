@@ -19,7 +19,7 @@ function joints_start() {
 
 } /* end joints start */
 
-//The default wordpress head is a mess. Let's clean it up by removing all the junk we don't need.
+// The default wordpress head is a mess. Let's clean it up by removing all the junk we don't need.
 function joints_head_cleanup() {
 	// Remove category feeds
 	// remove_action( 'wp_head', 'feed_links_extra', 3 );
@@ -44,41 +44,42 @@ function joints_head_cleanup() {
 // Remove injected CSS for recent comments widget
 function joints_remove_wp_widget_recent_comments_style() {
    if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
-      remove_filter('wp_head', 'wp_widget_recent_comments_style' );
+		remove_filter('wp_head', 'wp_widget_recent_comments_style' );
    }
 }
 
 // Remove injected CSS from recent comments widget
 function joints_remove_recent_comments_style() {
   global $wp_widget_factory;
-  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
-    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments']) ) {
+		remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
   }
 }
 
 // This removes the annoying […] to a Read More link
-function joints_excerpt_more($more) {
+function joints_excerpt_more( $more ) {
 	global $post;
 	// edit here if you like
-return '<a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'jointswp') . get_the_title($post->ID).'">'. __('... Read more &raquo;', 'jointswp') .'</a>';
+return '<a class="excerpt-read-more" href="' . get_permalink($post->ID) . '" title="' . __('Read', 'jointswp') . get_the_title($post->ID) . '">' . __('... Read more &raquo;', 'jointswp') . '</a>';
 }
 
-//  Stop WordPress from using the sticky class (which conflicts with Foundation), and style WordPress sticky posts using the .wp-sticky class instead
-function remove_sticky_class($classes) {
-	if(in_array('sticky', $classes)) {
-		$classes = array_diff($classes, array("sticky"));
+// Stop WordPress from using the sticky class (which conflicts with Foundation), and style WordPress sticky posts using the .wp-sticky class instead
+function remove_sticky_class( $classes ) {
+	if (in_array('sticky', $classes) ) {
+		$classes = array_diff($classes, array('sticky'));
 		$classes[] = 'wp-sticky';
 	}
-	
+
 	return $classes;
 }
 add_filter('post_class','remove_sticky_class');
 
-//This is a modified the_author_posts_link() which just returns the link. This is necessary to allow usage of the usual l10n process with printf()
+// This is a modified the_author_posts_link() which just returns the link. This is necessary to allow usage of the usual l10n process with printf()
 function joints_get_the_author_posts_link() {
 	global $authordata;
-	if ( !is_object( $authordata ) )
+	if ( ! is_object( $authordata ) ) {
 		return false;
+    }
 	$link = sprintf(
 		'<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
 		get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
@@ -90,41 +91,43 @@ function joints_get_the_author_posts_link() {
 
 // Delete transients when news posts, slider, profiles & people cpt are updated
 
-function delete_academic_transients($post_id) {
+function delete_academic_transients( $post_id ) {
 	global $post;
-	if (isset($_GET['post_type'])) {		
+	if (isset($_GET['post_type']) ) {
 		$post_type = $_GET['post_type'];
 	}
 	else {
 		$post_type = $post->post_type;
 	}
-	switch($post_type) {
-		case 'people' :
-			$roles = get_terms('role', array(
-						'orderby' 		=> 'id',
-						'hide_empty'    => true,
-						)); 
-			foreach($roles as $role) {
+	switch ($post_type ) {
+		case 'people':
+			$roles = get_terms(
+                'role', array(
+					'orderby'       => 'id',
+					'hide_empty'    => true,
+				)
+                );
+			foreach ($roles as $role ) {
 			$role_slug = $role->slug;
 				delete_transient('people_query_' . $role_slug);
 				delete_transient('job_market_query');
 				delete_transient('graduate_student_query');
 			}
-		break;
-		
-		case 'post' :
-			for ($i=1; $i < 5; $i++)
-			    { delete_transient('faculty_books_query_' . $i);
+		    break;
+
+		case 'post':
+			for ($i = 1; $i < 5; $i++ ) {
+delete_transient('faculty_books_query_' . $i);
 			      delete_transient('news_archive_query_' . $i); }
-			   
+
 			delete_transient('news_query');
 			delete_transient('news_mainpage_query');
-		break;
-		
-		case 'slider' :
+		    break;
+
+		case 'slider':
 			delete_transient('slider_query');
-		break;
-		case 'profile' :
+		    break;
+		case 'profile':
 			delete_transient('ksas_profile_undergrad_query');
 			delete_transient('ksas_profile_grad_query');
 			delete_transient('ksas_profile_spotlight_query');

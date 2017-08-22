@@ -2,54 +2,56 @@
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
     sass = require('gulp-sass'),
-    cssnano = require('gulp-cssnano'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
+    cssnano = require('gulp-cssnano'),
     jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
+    browserSync = require('browser-sync'),
     plumber = require('gulp-plumber'),
-    bower = require('gulp-bower'),
-    babel = require('gulp-babel'),
-    browserSync = require('browser-sync').create();
+    bower = require('gulp-bower');
     imageop = require('gulp-image-optimization');
+    babel = require('gulp-babel'),
+    phpcs = require('gulp-phpcs'),
     argv = require('yargs').argv;
 
-var config = {
+var $ = require('gulp-load-plugins')();
+var config = { 
      sassPath: './resources/sass',
      bowerDir: './bower_components' 
 }
 
-var URL = 'pineapple.dev/template-research/';
+var URL = 'pineapple.dev/template-research';
 
+var PATHS = {
+  phpcs: [
+    '**/*.php',
+    '!wpcs',
+    '!wpcs/**',
+  ]
+};
 // IF YOU UPDATE FOUNDATION VIA BOWER, RUN THIS TO SAVE UPDATED FILES TO /VENDOR
 gulp.task('bower', function() {
   return bower({ cmd: 'update'})
     .pipe(gulp.dest('vendor/'))
 });    
 
-// Browser-Sync watch files and inject changes
-gulp.task('browsersync', function() {
-    // Watch files
+gulp.task('browser-sync', ['styles'], function() {
+
     var files = [
-      './assets/css/*.css', 
-      './assets/js/*.js',
-      '**/*.php',
-      'assets/images/**/*.{png,jpg,gif,svg,webp}',
-    ];
-
+            'assets/css/*.css',
+            '**/*.php',
+            'assets/images/**/*.{png,jpg,gif}',
+          ];
+  
     browserSync.init(files, {
-      // Replace with URL of your local site
-      proxy: URL,
+        proxy: URL,
     });
+});        
     
-    gulp.watch('./assets/scss/**/*.scss', ['styles']);
-    gulp.watch('./assets/js/scripts/*.js', ['site-js']).on('change', browserSync.reload);
-
-});
-
 // Compile Sass, Autoprefix and minify
 gulp.task('styles', function() {
     return gulp.src('./assets/scss/**/*.scss')
@@ -68,7 +70,7 @@ gulp.task('styles', function() {
         .pipe(cssnano())
         .pipe(sourcemaps.write('.')) // Creates sourcemaps for minified styles
         .pipe(gulp.dest('./assets/css/'))
-});
+}); 
 
 // Compile Fontawesome fonts, place in /fonts directory
 gulp.task('icons', function() { 
@@ -85,22 +87,21 @@ gulp.task('site-js', function() {
         
   ])
     .pipe(plumber())
-    .pipe(sourcemaps.init())
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('./assets/js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(sourcemaps.write('.')) // Creates sourcemap for minified JS
     .pipe(gulp.dest('./assets/js'))
-});   
+    .pipe(browserSync.stream());
+});    
 
 // JSHint, concat, and minify Foundation JavaScript
 gulp.task('foundation-js', function() {
-  return gulp.src([	
-  		  
-  		  // Foundation core - needed if you want to use any of the components below
+  return gulp.src([ 
+        
+        // Foundation core - needed if you want to use any of the components below
           './vendor/foundation-sites/js/foundation.core.js',
           './vendor/foundation-sites/js/foundation.util.*.js',
           
@@ -148,11 +149,11 @@ gulp.task('images', function(cb) {
 
 // Create a default task 
 gulp.task('default', function() {
-  gulp.start('styles', 'site-js', 'foundation-js', 'images', 'icons');
+  gulp.start('styles', 'site-js', 'foundation-js', 'icons');
 });
 
 // Watch files for changes
-gulp.task('watch', ['styles', 'browsersync', 'images', 'icons'], function() {
+gulp.task('watch', ['styles', 'browser-sync', 'icons'], function() {
 
   function logFileChange(event) {
     var fileName = require('path').relative(__dirname, event.path);

@@ -6,7 +6,7 @@
 
 		    <main id="main" class="medium-9 medium-push-3 columns" role="main">
 				
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
  
 					<?php if ( get_post_meta($post->ID, 'ecpt_page_sidebar', true) ) : ?>
 
@@ -14,7 +14,7 @@
 
 			    		<?php get_template_part( 'parts/loop', 'page-sidebar' ); ?>
 
-			    	<?php else :?>
+			    	<?php else : ?>
 
 			    		<?php the_breadcrumb(); ?>
 

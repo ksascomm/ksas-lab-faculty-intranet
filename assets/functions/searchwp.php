@@ -1,5 +1,5 @@
 <?php // Automatically convert permalinks to PDFs in search results to the PDF itself, not the Attachment page
-function my_force_direct_pdf_links( $permalink ){
+function my_force_direct_pdf_links( $permalink ) {
 	global $post;
 	if ( is_search() && 'attachment' === get_post_type( $post ) ) {
 		// if the result is a PDF, link directly to the file not the attachment page
@@ -15,7 +15,7 @@ function maybe_append_searchwp_pdf_excerpt( $excerpt ) {
 
 	global $post;
 
-	$pdf_excerpt_length = 15;	// number of words in PDF excerpt
+	$pdf_excerpt_length = 15;   // number of words in PDF excerpt
 
 	if ( is_search() && ! post_password_required() ) {
 
@@ -100,10 +100,8 @@ function maybe_append_searchwp_pdf_excerpt( $excerpt ) {
 					$pdf_label = get_the_title( $attached_pdf->ID ); // the PDF label will be the title of the PDF post
 					$excerpt .= '<br /><br /><strong>' . $pdf_label . '</strong>: ' . $pdf_excerpt;
 				}
-
-			}
-
-		}
+}
+}
 	}
 	return $excerpt;
 }

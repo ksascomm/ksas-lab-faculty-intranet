@@ -14,14 +14,14 @@
 					</h1>
 
 					<div class="callout primary">
-						<p>You are currently searching on <strong><?php echo bloginfo('name') ;?></strong>. Would you like to search the entire <a href="http://krieger.jhu.edu/search/?q=<?php echo esc_attr(get_search_query()); ?>">Kreiger network</a>?</p>
+						<p>You are currently searching on <strong><?php echo bloginfo('name'); ?></strong>. Would you like to search the entire <a href="http://krieger.jhu.edu/search/?q=<?php echo esc_attr(get_search_query()); ?>">Kreiger network</a>?</p>
 					</div>
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
 				 
 						<!-- To see additional archive styles, visit the /parts directory -->
 						<?php get_template_part( 'parts/loop', 'search-results' ); ?>
-					    
+
 					<?php endwhile; ?>	
 
 						<?php joints_page_navi(); ?>

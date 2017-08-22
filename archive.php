@@ -7,17 +7,17 @@
 		    <main id="main" class="medium-9 medium-push-3 columns" role="main">
 			    
 		    	<header>
-		    		<h1 class="page-title"><?php the_archive_title();?></h1>
-					<?php the_archive_description('<div class="taxonomy-description">', '</div>');?>
+		    		<h1 class="page-title"><?php the_archive_title(); ?></h1>
+					<?php the_archive_description('<div class="taxonomy-description">', '</div>'); ?>
 		    	</header>
 		
-		    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			    <?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
 			 
 					<!-- To see additional archive styles, visit the /parts directory -->
 					<?php get_template_part( 'parts/loop', 'archive' ); ?>
-				    
-				<?php endwhile; ?>	
 
+				<?php endwhile; ?>
+				
 					<?php joints_page_navi(); ?>
 					
 				<?php else : ?>

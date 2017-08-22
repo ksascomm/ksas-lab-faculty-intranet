@@ -48,7 +48,7 @@
 	</head>
 	
 	<!-- Uncomment this line if using the Off-Canvas Menu --> 
-	<?php $theme_option = flagship_sub_get_global_options(); $color_scheme = $theme_option['flagship_sub_color_scheme'];?>
+	<?php $theme_option = flagship_sub_get_global_options(); $color_scheme = $theme_option['flagship_sub_color_scheme']; ?>
 	<body <?php body_class($color_scheme); ?>>
 
 		<div class="off-canvas-wrapper">
@@ -65,8 +65,8 @@
 						 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
 		 				
 							<div class="show-for-print">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/krieger.small.horizontal.blue.jpg" alt="krieger logo">
-								<h1><?php echo get_bloginfo ( 'description' ); ?> <?php echo get_bloginfo( 'title' ); ?></h1>
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/krieger.small.horizontal.blue.jpg" alt="krieger logo">
+								<h1><?php echo get_bloginfo( 'description' ); ?> <?php echo get_bloginfo( 'title' ); ?></h1>
 							</div>						
 
 					</header> <!-- end .header -->

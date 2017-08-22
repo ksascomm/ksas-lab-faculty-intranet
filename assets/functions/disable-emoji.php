@@ -1,5 +1,5 @@
-<?php 
-  
+<?php
+
 function disable_wp_emoji() {
 
   // all actions related to emojis
@@ -18,8 +18,8 @@ add_action( 'init', 'disable_wp_emoji' );
 
 function disable_emoji_tinymce( $plugins ) {
   if ( is_array( $plugins ) ) {
-    return array_diff( $plugins, array( 'wpemoji' ) );
+		return array_diff( $plugins, array( 'wpemoji' ) );
   } else {
-    return array();
+		return array();
   }
 }

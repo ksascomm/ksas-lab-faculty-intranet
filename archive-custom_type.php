@@ -6,11 +6,11 @@
 	
 		     <main id="main" class="medium-9 medium-push-3 columns" role="main">
     
-			    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			    <?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
 			 
 					<!-- To see additional archive styles, visit the /parts directory -->
 					<?php get_template_part( 'parts/loop', 'archive' ); ?>
-				    
+
 				<?php endwhile; ?>	
 
 					<?php joints_page_navi(); ?>
@@ -18,7 +18,7 @@
 				<?php else : ?>
 											
 					<?php get_template_part( 'parts/content', 'missing' ); ?>
-						
+
 				<?php endif; ?>
 																								
 		    </main> <!-- end #main -->

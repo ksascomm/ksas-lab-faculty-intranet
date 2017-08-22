@@ -3,7 +3,8 @@
 	<?php
 	// If a featured image is set, insert into layout and use Interchange
 	// to select the optimal image size per named media query.
-	if ( has_post_thumbnail( $post->ID ) ) : ?>
+	if ( has_post_thumbnail( $post->ID ) ) :
+    ?>
 
 	
 	<div class="row">
@@ -14,11 +15,11 @@
 			<h1 class="entry-title clear"><?php the_title(); ?></h1>
 	
 		</div>	
-	<?php else: ?>	
+	<?php else : ?>	
 
 		<h1 class="page-title"><?php the_title(); ?></h1>
 		
-	<?php endif;?>
+	<?php endif; ?>
 	<div class="row">
 	    <div class="entry-content" itemprop="articleBody">
 		    <?php the_content(); ?>

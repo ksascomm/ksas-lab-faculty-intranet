@@ -22,15 +22,15 @@ taxonomy-shoes.php
 	    <main id="main" class="medium-9 medium-push-3 columns" role="main">
 	
 		    <header>
-		    	<h1 class="page-title"><span><?php _e("Posts Categorized:", "jointstheme"); ?></span> <?php single_cat_title(); ?></h1>
+		    	<h1 class="page-title"><span><?php _e('Posts Categorized:', 'jointstheme'); ?></span> <?php single_cat_title(); ?></h1>
 		    </header>
 
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
 		 
-				<!-- To see additional archive styles, visit the /parts directory -->
-				<?php get_template_part( 'parts/loop', 'archive' ); ?>
+					<!-- To see additional archive styles, visit the /parts directory -->
+					<?php get_template_part( 'parts/loop', 'archive' ); ?>
 			    
-			<?php endwhile; ?>	
+				<?php endwhile; ?>	
 
 				<?php joints_page_navi(); ?>
 				

@@ -1,4 +1,4 @@
-<?php $theme_option = flagship_sub_get_global_options(); 
+<?php $theme_option = flagship_sub_get_global_options();
       $analytics_id = $theme_option['flagship_sub_google_analytics']; ?>
 
 <script>

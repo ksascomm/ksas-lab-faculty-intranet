@@ -1,4 +1,4 @@
-<?php if( 0 === ( $wp_query->current_post  )  % 4 ): ?>
+<?php if ( 0 === ( $wp_query->current_post  ) % 4 ) : ?>
 
     <div class="row archive-grid" data-equalizer> <!--Begin Row:--> 
 
@@ -14,7 +14,7 @@
 				</section> <!-- end article section -->
 			
 				<header class="article-header">
-					<h3 class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>	
+					<h3 class="title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>	
 					<?php get_template_part( 'partials/content', 'byline' ); ?>				
 				</header> <!-- end article header -->	
 								
@@ -26,9 +26,8 @@
 			
 		</div>
 
-<?php if( 0 === ( $wp_query->current_post + 1 )  % 4  ||  ( $wp_query->current_post + 1 ) ===  $wp_query->post_count ): ?>
+<?php if ( 0 === ( $wp_query->current_post + 1 ) % 4 || ( $wp_query->current_post + 1 ) === $wp_query->post_count ) : ?>
 
    </div>  <!--End Row: --> 
 
 <?php endif; ?>
-
