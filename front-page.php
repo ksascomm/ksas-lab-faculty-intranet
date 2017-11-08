@@ -63,7 +63,7 @@
 				if ( $news_query->have_posts() ) :
                 ?>
 
-				<div class="small-12 large-9 end columns news-feed">
+				<div class="news-feed">
 
 					<h3><?php echo $theme_option['flagship_sub_feed_name']; ?></h3>
 
