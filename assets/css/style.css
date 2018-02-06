@@ -7024,29 +7024,39 @@ TYPOGRAPHY
 	}
 */
 @font-face {
-  font-family: 'quadon';
+  font-family: 'quadon-medium';
   src: url("../fonts/quadon/Quadon-Medium.eot");
-  src: url("../fonts/quadon/Quadon-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/quadon/Quadon-Medium.woff") format("woff"), url("../fonts/quadon/Quadon-Medium.ttf") format("truetype"); }
+  src: url("../fonts/quadon/Quadon-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/quadon/Quadon-Medium.woff") format("woff"), url("../fonts/quadon/Quadon-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
 
 @font-face {
-  font-family: 'gentona-book';
-  src: url("../fonts/gentona/Gentona-Book.eot");
-  src: url("../fonts/gentona/Gentona-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-Book.woff") format("woff"), url("../fonts/gentona/Gentona-Book.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'gentona-bold';
-  src: url("../fonts/gentona/Gentona-Bold.eot");
-  src: url("../fonts/gentona/Gentona-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-Bold.woff") format("woff"), url("../fonts/gentona/Gentona-Bold.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'gentona-semibold';
-  src: url("../fonts/gentona/Gentona-SemiBold.eot");
-  src: url("../fonts/gentona/Gentona-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-SemiBold.woff") format("woff"), url("../fonts/gentona/Gentona-SemiBold.ttf") format("truetype"); }
+  font-family: 'quadon-extrabold';
+  src: url("../fonts/quadon/Quadon-ExtraBold.eot");
+  src: url("../fonts/quadon/Quadon-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/quadon/Quadon-ExtraBold.woff") format("woff"), url("../fonts/quadon/Quadon-ExtraBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
 
 @font-face {
   font-family: 'gentona-light';
   src: url("../fonts/gentona/Gentona-Light.eot");
-  src: url("../fonts/gentona/Gentona-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-Light.woff") format("woff"), url("../fonts/gentona/Gentona-Light.ttf") format("truetype"); }
+  src: url("../fonts/gentona/Gentona-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-Light.woff") format("woff"), url("../fonts/gentona/Gentona-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'gentona-semibold';
+  src: url("../fonts/gentona/Gentona-SemiBold.eot");
+  src: url("../fonts/gentona/Gentona-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-SemiBold.woff") format("woff"), url("../fonts/gentona/Gentona-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'gentona-bold';
+  src: url("../fonts/gentona/Gentona-Bold.eot");
+  src: url("../fonts/gentona/Gentona-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/gentona/Gentona-Bold.woff") format("woff"), url("../fonts/gentona/Gentona-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
 
 @font-face {
   font-family: 'flagship-icon';
@@ -7063,12 +7073,12 @@ span.amp {
   font-style: italic; }
 
 strong, b, .bold {
-  font-family: "gentona-book", Arial, sans-serif;
-  font-weight: 400;
+  font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600;
   font-style: normal; }
 
 .b.em, .strong.em, em, i {
-  font-family: "gentona-light", Arial, sans-serif;
+  font-family: "gentona-light", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 300;
   font-style: italic; }
 
@@ -7661,20 +7671,18 @@ Stylesheet: Main Stylesheet
 GENERAL STYLES
 *********************/
 body {
-  font-family: "gentona-light", Arial, sans-serif;
+  font-family: "gentona-light", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 112.5%; }
 
-h1, h2 {
-  font-family: "quadon", Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal; }
+h1 {
+  font-family: "quadon-medium", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 400; }
 
-h3, h4, h5, h6, .semibold, blockquote {
-  font-family: "gentona-book", Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal; }
+h2, h3, h4, h5, h6, .semibold, blockquote {
+  font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600; }
 
 blockquote, blockquote p {
   color: #2C2C33; }
@@ -7796,8 +7804,13 @@ H1, H2, H3, H4, H5 P STYLES
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none; }
 
-h1, .h1, .page-title, .entry-title.single-title {
+h1, .h1 {
   font-size: 2rem; }
+
+h1.page-title, h1.entry-title {
+  font-size: 1.75rem;
+  font-family: "quadon-extrabold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 700; }
 
 h1.search-result {
   font-size: 1.25rem !important; }
@@ -7842,10 +7855,8 @@ HEADER STYLES
       line-height: 1.1em; } }
   @media print, screen and (min-width: 64em) {
     .header h1 {
-      font-size: 2.35rem;
       line-height: 1.1em; } }
   .header h1 small {
-    font-family: "gentona-book", Arial, sans-serif;
     font-size: 50%;
     color: #fff;
     margin-bottom: 1px;
@@ -7887,9 +7898,6 @@ NAVIGATION STYLES
     @media print, screen and (min-width: 40em) {
       .top-bar img {
         max-width: 275px; } }
-    @media print, screen and (min-width: 64em) {
-      .top-bar img {
-        max-width: 300px; } }
   .top-bar ul {
     background-color: #005eb8; }
     .top-bar ul li {
@@ -8089,10 +8097,16 @@ POSTS & CONTENT STYLES
     font-size: 1.5rem; }
     .news-feed h1.entry-title {
       font-size: 1.25rem;
-      font-family: "gentona-book", Arial, sans-serif; }
+      font-family: "gentona-bold", "Helvetica Neue", Roboto, sans-serif;
+      font-weight: 700; }
   .news-feed h2 {
     font-size: 1.25rem;
-    font-family: "gentona-book", Arial, sans-serif; }
+    font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+    font-weight: 600; }
+  .news-feed h1.hub-title, .news-feed h1.feed-title {
+    font-size: 1.5rem;
+    font-family: "quadon-extrabold", "Helvetica Neue", Roboto, sans-serif;
+    font-weight: 700; }
 
 #content .tabs, #content .tabs-content {
   border: none; }
@@ -8136,7 +8150,6 @@ POSTS & CONTENT STYLES
   padding: 0px; }
 
 .byline {
-  font-family: "gentona-book", Arial, sans-serif;
   margin-bottom: 0rem; }
 
 .entry-content .imageblockleft {
@@ -8354,7 +8367,7 @@ footer {
   margin-top: 1rem;
   background: #333;
   color: #ccc;
-  font-family: "quadon", Arial, sans-serif; }
+  font-family: "quadon-medium", "Helvetica Neue", Roboto, sans-serif; }
   #search-bar input[type="text"] {
     height: 31px;
     background: white;
@@ -8421,7 +8434,7 @@ FOUNDATION STYLES
   .roof input {
     height: 1.75rem; }
     .roof input[type="submit"] {
-      font-family: FontAwesome, "gentona-bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      font-family: FontAwesome, "gentona-semibold", "Helvetica Neue", Roboto, sans-serif; }
   .roof .button {
     background-color: #418def; }
   .roof .roof-menu {
@@ -8438,7 +8451,7 @@ div#offCanvasTop1 {
 
 #global-links h3 {
   font-size: 1.25rem;
-  font-family: "gentona-semibold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+  font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif; }
 
 #global-links .menu {
   display: inherit; }
@@ -8446,7 +8459,7 @@ div#offCanvasTop1 {
     display: list-item; }
     #global-links .menu li a {
       padding: 0.35rem 1rem;
-      font-family: "gentona-bold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "gentona-bold", "Helvetica Neue", Roboto, sans-serif;
       color: #005eb8; }
       #global-links .menu li a:hover, #global-links .menu li a:active {
         color: #2C2C33; }
@@ -8456,7 +8469,7 @@ div#offCanvasTop1 {
   .off-canvas .menu > li > a {
     font-size: 1rem;
     color: #fefefe;
-    font-family: "gentona-semibold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+    font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif; }
     .off-canvas .menu > li > a:hover {
       background: #b4b2ad; }
   .off-canvas .is-accordion-submenu-parent > a::after {
@@ -8466,7 +8479,7 @@ div#offCanvasTop1 {
   .off-canvas form {
     margin-top: 1rem; }
   .off-canvas input[type="submit"] {
-    font-family: FontAwesome, "gentona-bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: FontAwesome, "gentona-semibold", "Helvetica Neue", Roboto, sans-serif; }
   .off-canvas .input-group-button {
     width: 100%;
     float: left;
@@ -8693,10 +8706,12 @@ footer.timely.ai1ec-event-footer {
 
 .timely p {
   font-size: 16px;
-  font-family: "gentona-light", Arial, sans-serif !important; }
+  font-family: "gentona-light", "Helvetica Neue", Roboto, sans-serif !important;
+  font-weight: 300; }
 
 .ai1ec-event-time, span.ai1ec-event-title, .ai1ec-event-details, .ai1ec-event-location {
-  font-family: "gentona-book", Arial, sans-serif !important; }
+  font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif !important;
+  font-weight: 600; }
 
 .ai1ec-agenda-view .ai1ec-event .ai1ec-event-time {
   opacity: 1;

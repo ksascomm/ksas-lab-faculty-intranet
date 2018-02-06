@@ -49,10 +49,12 @@ footer.timely.ai1ec-event-footer {
 .timely p {
   font-size: 16px;
   font-family: $font-stack !important;
+  font-weight: $font-stack-weight;
 }
 
 .ai1ec-event-time, span.ai1ec-event-title, .ai1ec-event-details, .ai1ec-event-location {
-  font-family: $font-subhead !important;
+  font-family: $font-stack-semibold !important;
+  font-weight: $font-stack-semibold-weight;
 }
 
 .ai1ec-agenda-view .ai1ec-event .ai1ec-event-time {

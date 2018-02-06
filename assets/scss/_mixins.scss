@@ -46,33 +46,23 @@ TYPOGRAPHY
 */
 
 @font-face {
-  font-family: 'quadon';
+  font-family: 'quadon-medium';
   src: url('../fonts/quadon/Quadon-Medium.eot');
   src: url('../fonts/quadon/Quadon-Medium.eot?#iefix') format('embedded-opentype'),
        url('../fonts/quadon/Quadon-Medium.woff') format('woff'),
        url('../fonts/quadon/Quadon-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'gentona-book';
-  src: url('../fonts/gentona/Gentona-Book.eot');
-  src: url('../fonts/gentona/Gentona-Book.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/gentona/Gentona-Book.woff') format('woff'),
-       url('../fonts/gentona/Gentona-Book.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'gentona-bold';
-  src: url('../fonts/gentona/Gentona-Bold.eot');
-  src: url('../fonts/gentona/Gentona-Bold.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/gentona/Gentona-Bold.woff') format('woff'),
-       url('../fonts/gentona/Gentona-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'gentona-semibold';
-  src: url('../fonts/gentona/Gentona-SemiBold.eot');
-  src: url('../fonts/gentona/Gentona-SemiBold.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-SemiBold.woff') format("woff"), url('../fonts/gentona/Gentona-SemiBold.ttf') format("truetype");
+  font-family: 'quadon-extrabold';
+  src: url('../fonts/quadon/Quadon-ExtraBold.eot');
+  src: url('../fonts/quadon/Quadon-ExtraBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/quadon/Quadon-ExtraBold.woff') format('woff'),
+       url('../fonts/quadon/Quadon-ExtraBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
@@ -81,6 +71,28 @@ TYPOGRAPHY
   src: url('../fonts/gentona/Gentona-Light.eot?#iefix') format('embedded-opentype'),
        url('../fonts/gentona/Gentona-Light.woff') format('woff'),
        url('../fonts/gentona/Gentona-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gentona-semibold';
+  src: url('../fonts/gentona/Gentona-SemiBold.eot');
+  src: url('../fonts/gentona/Gentona-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gentona/Gentona-SemiBold.woff') format('woff'),
+       url('../fonts/gentona/Gentona-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gentona-bold';
+  src: url('../fonts/gentona/Gentona-Bold.eot');
+  src: url('../fonts/gentona/Gentona-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gentona/Gentona-Bold.woff') format('woff'),
+       url('../fonts/gentona/Gentona-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
@@ -97,13 +109,18 @@ TYPOGRAPHY
   font-style: normal;
 }
 
-$font-stack: 'gentona-light', Arial, sans-serif;
-$font-header: 'quadon', Arial, sans-serif;
-$font-subhead: 'gentona-book', Arial, sans-serif;
-$font-stack-bold: 'gentona-bold', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$font-stack-semibold: 'gentona-semibold', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-
-$font-awesome: FontAwesome, 'gentona-bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-header: 'quadon-medium', 'Helvetica Neue', Roboto, sans-serif;
+$font-header-weight: 400;
+$font-header-extrabold: 'quadon-extrabold', 'Helvetica Neue', Roboto, sans-serif;
+$font-header-extrabold-weight: 700;
+$font-stack: 'gentona-light', 'Helvetica Neue', Roboto,  sans-serif;
+$font-stack-weight: 300;
+$font-stack-semibold: 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+$font-stack-semibold-weight: 600;
+$font-stack-bold: 'gentona-bold', 'Helvetica Neue', Roboto, sans-serif;
+$font-stack-bold-weight: 700;
+$flagship-icon: 'icomoon', 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+$font-awesome: FontAwesome, 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
 
 //Use the best ampersand - http://simplebits.com/notebook/2008/08/14/ampersands-2/
 span.amp {
@@ -113,15 +130,15 @@ span.amp {
 
 //strong, b, .bold
 %extend_1 {
-  font-family: $font-subhead;
-  font-weight: 400;
+  font-family: $font-stack-semibold;
+  font-weight: $font-stack-semibold-weight;
   font-style: normal;
 }
 
 //.b.em, .strong.em
 %extend_2 {
   font-family: $font-stack;
-  font-weight: 300;
+  font-weight: $font-stack-weight;
   font-style: italic;
 }
 
