@@ -8,7 +8,7 @@ get_header();
 	$theme_option = flagship_sub_get_global_options();
 	$roles = get_terms(
         'role', array(
-			'orderby'       => 'ID',
+			'orderby'       => 'slug',
 			'order'         => 'ASC',
 			'hide_empty'    => true,
 		)
