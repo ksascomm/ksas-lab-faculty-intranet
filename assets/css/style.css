@@ -8436,7 +8436,7 @@ FOUNDATION STYLES
     .roof input[type="submit"] {
       font-family: FontAwesome, "gentona-semibold", "Helvetica Neue", Roboto, sans-serif; }
   .roof .button {
-    background-color: #418def; }
+    background-color: #2A78C7; }
   .roof .roof-menu {
     font-size: 1rem; }
     @media print, screen and (min-width: 40em) {
@@ -8492,7 +8492,7 @@ div#offCanvasTop1 {
     .off-canvas .input-group-button:last-child:not(:first-child) {
       float: right; }
     .off-canvas .input-group-button .button {
-      background-color: #418def;
+      background-color: #2A78C7;
       width: 100%; }
 
 /*********************
