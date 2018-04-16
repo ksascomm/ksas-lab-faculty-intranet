@@ -24,7 +24,7 @@ var config = {
      bowerDir: './bower_components' 
 }
 
-var URL = 'pineapple.dev/template-research';
+var URL = 'sitesdot.local/template-research';
 
 var PATHS = {
   phpcs: [
