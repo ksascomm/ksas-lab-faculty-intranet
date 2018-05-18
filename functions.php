@@ -36,6 +36,9 @@ require_once(get_template_directory() . '/assets/functions/fontawesome.php');
 // Breadcrumbs
 require_once(get_template_directory() . '/assets/functions/breadcrumbs.php');
 
+// Custom Open Graph tags
+ require_once(get_template_directory() . '/assets/functions/open-graph.php');
+
 // Adds site styles to the WordPress editor
 // require_once(get_template_directory().'/assets/functions/editor-styles.php');
 
