@@ -4,7 +4,45 @@
 
 	<div id="inner-content" class="expanded row">
 
-		 <main id="main" class="medium-9 medium-push-3 columns" role="main">
+		<div class="hide-for-small-only medium-3 columns">
+
+	    	<?php joints_sidebar_nav(); ?>
+
+	    	<div class="sidebar-nav search">
+	    		<hr><?php get_search_form(); ?>
+	    	</div>
+	    	
+			<?php if (has_term('', 'role') && ! has_term('job-market-candidate', 'role') ) : ?>
+				<div class="sidebar-nav search">
+						<hr><label for="jump">
+							<h5>Jump to Faculty Member</h5>
+						</label>
+						<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+							<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
+								<option>---<?php the_title(); ?></option> 
+							<?php endwhile; endif; ?>
+							<?php
+                            $jump_menu_query = new WP_Query(
+                                array(
+									'post-type' => 'people',
+									'role' => 'faculty',
+									'meta_key' => 'ecpt_people_alpha',
+									'orderby' => 'meta_value',
+									'order' => 'ASC',
+									'posts_per_page' => '-1',
+								)
+                                );
+                                ?>
+							<?php while ($jump_menu_query->have_posts() ) : $jump_menu_query->the_post(); ?>
+								<option value="<?php the_permalink(); ?>"><?php the_title(); ?></option>
+							<?php endwhile; ?>
+						</select>
+				</div>
+			<?php endif; ?>	
+
+	    </div>
+
+		 <main id="main" class="medium-9 columns" role="main">
 				<ul class="breadcrumbs">
 					<li><a href="<?php echo site_url(); ?>" title="Home">Home</a>
 					<li><a href="<?php echo site_url(); ?>/people/" title="People">People</a></li>
@@ -83,43 +121,6 @@
 									<?php endwhile; endif; ?>
 			</article>	
 		</main> <!-- end #main -->
-		<div class="hide-for-small-only medium-3 medium-pull-9 columns">
-
-	    	<?php joints_sidebar_nav(); ?>
-
-	    	<div class="sidebar-nav search">
-	    		<hr><?php get_search_form(); ?>
-	    	</div>
-	    	
-			<?php if (has_term('', 'role') && ! has_term('job-market-candidate', 'role') ) : ?>
-				<div class="sidebar-nav search">
-						<hr><label for="jump">
-							<h5>Jump to Faculty Member</h5>
-						</label>
-						<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
-							<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
-								<option>---<?php the_title(); ?></option> 
-							<?php endwhile; endif; ?>
-							<?php
-                            $jump_menu_query = new WP_Query(
-                                array(
-									'post-type' => 'people',
-									'role' => 'faculty',
-									'meta_key' => 'ecpt_people_alpha',
-									'orderby' => 'meta_value',
-									'order' => 'ASC',
-									'posts_per_page' => '-1',
-								)
-                                );
-                                ?>
-							<?php while ($jump_menu_query->have_posts() ) : $jump_menu_query->the_post(); ?>
-								<option value="<?php the_permalink(); ?>"><?php the_title(); ?></option>
-							<?php endwhile; ?>
-						</select>
-				</div>
-			<?php endif; ?>	
-
-	    </div>	
 	</div> <!-- end #inner-content -->
 
 </div> <!-- end #content -->

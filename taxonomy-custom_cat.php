@@ -19,7 +19,17 @@ taxonomy-shoes.php
 
 	<div id="inner-content" class="expanded row">
 
-	    <main id="main" class="medium-9 medium-push-3 columns" role="main">
+		<div class="hide-for-small-only medium-3 columns">
+
+	    	<?php joints_sidebar_nav(); ?>
+
+	    	<div class="sidebar-nav search">
+	    		<hr><?php get_search_form(); ?>
+	    	</div>
+	    	
+	    </div>
+
+	    <main id="main" class="medium-9 columns" role="main">
 	
 		    <header>
 		    	<h1 class="page-title"><span><?php _e('Posts Categorized:', 'jointstheme'); ?></span> <?php single_cat_title(); ?></h1>
@@ -41,16 +51,6 @@ taxonomy-shoes.php
 			<?php endif; ?>
 
 	    </main> <!-- end #main -->
-
-		<div class="hide-for-small-only medium-3 medium-pull-9 columns">
-
-	    	<?php joints_sidebar_nav(); ?>
-
-	    	<div class="sidebar-nav search">
-	    		<hr><?php get_search_form(); ?>
-	    	</div>
-	    	
-	    </div>
 	    
 	</div> <!-- end #inner-content -->
 

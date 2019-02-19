@@ -4,7 +4,7 @@
 	
 		<div id="inner-content" class="expanded row">
 	
-		     <main id="main" class="medium-9 medium-push-3 columns" role="main">
+		     <main id="main" class="medium-9 columns" role="main">
     
 			    <?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
 			 
@@ -23,7 +23,7 @@
 																								
 		    </main> <!-- end #main -->
 
-			<div class="hide-for-small-only medium-3 medium-pull-9 columns">
+			<div class="hide-for-small-only medium-3 columns">
 		    	<?php joints_sidebar_nav(); ?>
 
 		    	<div class="sidebar-nav search">
