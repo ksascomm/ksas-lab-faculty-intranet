@@ -4,6 +4,17 @@
 
 		<div id="inner-content" class="expanded row">
 	
+
+			<div class="hide-for-small-only medium-3 columns">
+			
+		    	<?php joints_sidebar_nav(); ?>
+
+		    	<div class="sidebar-nav search">
+		    		<hr><?php get_search_form(); ?>
+		    	</div>
+
+		    </div>
+	
 			<main id="main" class="medium-9 columns" role="main">
 
 				<article class="small-12 medium-9 columns" id="content-not-found">
@@ -23,16 +34,6 @@
 				</article> <!-- end article -->
 		
 			</main> <!-- end #main -->
-
-			<div class="hide-for-small-only medium-3 columns">
-			
-		    	<?php joints_sidebar_nav(); ?>
-
-		    	<div class="sidebar-nav search">
-		    		<hr><?php get_search_form(); ?>
-		    	</div>
-
-		    </div>
 
 		</div> <!-- end #inner-content -->
 
