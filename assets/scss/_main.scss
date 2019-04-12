@@ -12,7 +12,12 @@ body {
   font-family: $font-stack;
   font-weight: 300;
   font-style: normal;
-  font-size: $global-font-size * 1.125
+  font-size: $global-font-size * 1.125;
+
+}
+
+main {
+	display: block;
 }
 
 h1 {
@@ -186,6 +191,12 @@ a, a:visited {
 		border-bottom-color: rgba(0,0,0,.2);
 		&:hover, &:active {
 		  	color: $black;
+		  	border-bottom-style: solid;
+		}
+	}
+	a.button {
+		&:visited, &:hover, &:active {
+		  	color: $white;
 		  	border-bottom-style: solid;
 		}
 	}

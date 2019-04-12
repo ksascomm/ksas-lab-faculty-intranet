@@ -2425,10 +2425,6 @@ textarea {
   textarea[rows] {
     height: auto; }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #8a8a8a; }
-
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   color: #8a8a8a; }
@@ -2450,7 +2446,7 @@ textarea[readonly] {
   appearance: none;
   border-radius: 0; }
 
-input[type='search'] {
+input[type="search"] {
   box-sizing: border-box; }
 
 [type='file'],
@@ -2608,8 +2604,6 @@ select {
 .is-invalid-input:not(:focus) {
   border-color: #ec5840;
   background-color: #fcedeb; }
-  .is-invalid-input:not(:focus)::-webkit-input-placeholder {
-    color: #ec5840; }
   .is-invalid-input:not(:focus):-ms-input-placeholder {
     color: #ec5840; }
   .is-invalid-input:not(:focus)::placeholder {
@@ -4299,7 +4293,9 @@ table {
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 0; }
-  thead, tbody, tfoot {
+  thead,
+  tbody,
+  tfoot {
     border: 1px solid #f1f1f1;
     background-color: #fefefe; }
   caption {
@@ -4311,13 +4307,18 @@ table {
   tfoot {
     background: #f1f1f1;
     color: #2C2C33; }
-  thead tr, tfoot tr {
+  thead tr,
+  tfoot tr {
     background: transparent; }
-  thead th, thead td, tfoot th, tfoot td {
+  thead th,
+  thead td,
+  tfoot th,
+  tfoot td {
     padding: 0.5rem 0.625rem 0.625rem;
     font-weight: bold;
     text-align: left; }
-  tbody th, tbody td {
+  tbody th,
+  tbody td {
     padding: 0.5rem 0.625rem 0.625rem; }
   tbody tr:nth-child(even) {
     border-bottom: 0;
@@ -7308,11 +7309,9 @@ CSS3 GRADIENTS.
   cursor: zoom-in; }
 
 .fancybox-controls--canGrab .fancybox-placeholder {
-  cursor: -webkit-grab;
   cursor: grab; }
 
 .fancybox-controls--isGrabbing .fancybox-placeholder {
-  cursor: -webkit-grabbing;
   cursor: grabbing; }
 
 .fancybox-spaceball {
@@ -7676,6 +7675,9 @@ body {
   font-style: normal;
   font-size: 112.5%; }
 
+main {
+  display: block; }
+
 h1 {
   font-family: "quadon-medium", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 400; }
@@ -7769,7 +7771,8 @@ ul.nav {
 /*********************
 LINK STYLES
 *********************/
-a, a:visited {
+a,
+a:visited {
   color: #005eb8; }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
     color: #005eb8; }
@@ -7797,6 +7800,10 @@ a, a:visited {
   .textwidget p a:hover, .textwidget p a:active, .textwidget ul a:hover, .textwidget ul a:active {
     color: #2C2C33;
     border-bottom-style: solid; }
+
+.textwidget a.button:visited, .textwidget a.button:hover, .textwidget a.button:active {
+  color: #fefefe;
+  border-bottom-style: solid; }
 
 /*********************
 H1, H2, H3, H4, H5 P STYLES
@@ -8827,7 +8834,8 @@ to display none.
     text-shadow: none !important;
     filter: none !important;
     -ms-filter: none !important; }
-  a, a:visited {
+  a,
+  a:visited {
     color: #444 !important;
     text-decoration: underline; }
     a:after, a:visited:after {
@@ -8835,21 +8843,25 @@ to display none.
     a abbr[title]:after, a:visited abbr[title]:after {
       content: " (" attr(title) ")"; }
   .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
+  a[href^='javascript:']:after,
+  a[href^='#']:after {
     content: ""; }
-  pre, blockquote {
+  pre,
+  blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
   thead {
     display: table-header-group; }
-  tr, img {
+  tr,
+  img {
     page-break-inside: avoid; }
   img {
     max-width: 100% !important; }
   @page {
     margin: 0.5cm; }
-  p, h2, h3 {
+  p,
+  h2,
+  h3 {
     orphans: 3;
     widows: 3; }
   h2,
