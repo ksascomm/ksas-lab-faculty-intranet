@@ -7073,12 +7073,12 @@ span.amp {
   font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
   font-style: italic; }
 
-strong, b, .bold {
+.entry-content p strong, .entry-content p b, .entry-content p .bold, .textwidget strong, .textwidget b, .textwidget .bold {
   font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 600;
   font-style: normal; }
 
-.b.em, .strong.em, em, i {
+.entry-content p .b.em, .entry-content p .strong.em, .entry-content p em, .entry-content p i, .textwidget .b.em, .textwidget .strong.em, .textwidget em, .textwidget i {
   font-family: "gentona-light", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 300;
   font-style: italic; }

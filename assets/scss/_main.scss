@@ -30,24 +30,13 @@ h2, h3, h4, h5, h6, .semibold, blockquote {
     font-weight: $font-stack-semibold-weight;
 }
 
-strong {
-  @extend %extend_1;
-}
-b {
-  @extend %extend_1;
-}
-.bold {
-  @extend %extend_1;
-}
-.b.em {
-  @extend %extend_2;
-}
-.strong.em {
-  @extend %extend_2;
-}
-
-em, i {
- @extend %extend_2;
+.entry-content p, .textwidget {
+	strong, b, .bold {
+	  @extend %extend_1;
+	}
+	.b.em, .strong.em, em, i {
+	  @extend %extend_2;
+	}
 }
 
 blockquote, blockquote p {
