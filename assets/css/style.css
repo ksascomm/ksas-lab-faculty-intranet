@@ -8410,6 +8410,10 @@ footer {
 /*********************
 FOUNDATION STYLES
 *********************/
+.button {
+  font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600; }
+
 .callout.primary {
   background: #e6e6e6; }
 

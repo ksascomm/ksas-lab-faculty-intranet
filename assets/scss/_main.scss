@@ -1030,6 +1030,11 @@ footer {
 /*********************
 FOUNDATION STYLES
 *********************/
+.button {
+	font-family: $font-stack-semibold;
+	font-weight: $font-stack-semibold-weight;
+}
+
 
 .callout.primary {
     background: $light-gray;
