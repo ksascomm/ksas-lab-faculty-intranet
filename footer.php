@@ -1,6 +1,6 @@
 					<footer class="footer hide-for-print" role="contentinfo">
 						<div id="inner-footer" class="row">
-		    				<div class="row" id="copyright" role="content-info">
+		    				<div class="row" id="copyright">
 								<div class="small-12 columns">
 									<?php $theme_option = flagship_sub_get_global_options(); ?>
   									<p>&copy; <?php print date('Y'); ?> Johns Hopkins University, <?php echo $theme_option['flagship_sub_copyright']; ?></p>
