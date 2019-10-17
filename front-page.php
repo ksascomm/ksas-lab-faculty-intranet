@@ -79,11 +79,9 @@
 					<?php endwhile; ?>
 
 					 <div class="row">
-						<h5 class="black">
-							<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
-								View <?php echo $theme_option['flagship_sub_feed_name']; ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
-							</a>
-						</h5>
+						<a class="button" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
+							View <?php echo $theme_option['flagship_sub_feed_name']; ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
+						</a>
 					</div>
 				</div>
 				<?php endif; ?>

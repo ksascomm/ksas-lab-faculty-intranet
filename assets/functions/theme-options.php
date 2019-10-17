@@ -69,10 +69,10 @@ function flagship_sub_options_page_fields() {
 		'section' => 'select_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_color_scheme',
 		'title'   => __( 'Color Scheme', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Choose your theme color scheme', 'flagship_sub_textdomain' ),
+		'desc'    => __( 'Choose your theme color scheme: Heritage or Spirit blue', 'flagship_sub_textdomain' ),
 		'type'    => 'select',
-		'choices' => array('blue', 'black', 'green', 'red', 'rust'),
-		'std'    => 'blue',
+		'choices' => array('heritage', 'spirit'),
+		'std'    => 'heritage',
 	);
 	return $options;
 

@@ -63,10 +63,6 @@ CSS file.
   @include foundation-visibility-classes;
   @include foundation-float-classes;
 
-// Import Font Awesome
-// Import foundation.scss from vendor files
-@import "../../vendor/font-awesome/scss/font-awesome";
-
 // Import mixins
 @import "mixins";
 

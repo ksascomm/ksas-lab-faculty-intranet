@@ -13,6 +13,7 @@ body {
   font-weight: 300;
   font-style: normal;
   font-size: $global-font-size * 1.125;
+  color: $black;
 
 }
 
@@ -164,6 +165,14 @@ a, a:visited {
 		  	color: $black;
 		  	border-bottom-style: solid;
 		}
+		&.button {
+			color: $white;
+			&:hover, &:focus {
+				background-color: $white;
+			    color: $primary-color;
+			    border: 1px solid $primary-color;
+			}		
+		}		
 	}
 	ul.accordion a.accordion-title {
 	  border-bottom: 1px solid #e6e6e6;
@@ -530,6 +539,72 @@ body.rust {
 	}
 }
 
+body.spirit {
+	.top-bar, #sidebar_header {
+		background-color: $spirit;
+		ul {
+			background-color: $spirit;
+			li {
+				background-color: $spirit;
+				a, a:visited {
+					color: $black;
+				}
+			}
+		}
+		h1 {
+			small {
+				color: $black;
+			}
+		}
+		.is-dropdown-submenu-parent.is-down-arrow > a::after {
+			border-color: #fff transparent transparent;
+		}
+	}
+	.sidebar-nav.menu {
+		a {
+			color: $black;
+		}
+	}
+	#main {
+		a {
+			color: $primary-color;
+			border-bottom: .125em dotted;
+			border-bottom-color: rgba(0,0,0,.2);
+			&:hover, &:active {
+			  	color: $black;
+			  	border-bottom-style: solid;
+			}
+			&.button {
+				color: $white;
+				border: none;
+				&:hover, &:active {
+					color: $black;
+				  	border: 1px solid $black;
+				}
+			}
+		}
+	}
+	.button {
+		background-color: $black;
+		&:focus {
+			outline: -webkit-focus-ring-color auto 5px;
+		}
+	}
+	.ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
+		color: $spirit;
+	}
+	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
+		background: $spirit;
+	}
+	.roof {
+		background-color: $spirit;
+		.menu.simple a.button {
+			color: $white;
+			background-color: $black;
+		}
+	}
+}
+
 .dropdown.menu .is-dropdown-submenu-parent.is-right-arrow > a::after {
     border-color: transparent transparent transparent #fff;
 }
@@ -879,8 +954,17 @@ SIDEBARS & ASIDES
 		}
 }
 
-#searchsubmit {
+.search-submit {
+	&.button {
+		color: $white;
+		&:hover, &:focus {
+			background-color: $white;
+		    color: $primary-color;
+		    border: 1px solid $primary-color;
+		}		
+	}	
 }
+
 
 .widgettitle {
 	padding-top:5px;
@@ -926,16 +1010,16 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 footer {
-	background: $black;
+	background: $oldblack;
 }
 .footer {
   clear: both;
   padding-top: 1.5rem;
 	a, a:visited {
 	color: #CCC;
-	    &:hover, &:focus {
-			color: #ccc;
-	    }
+    &:hover, &:focus {
+		color: #ccc;
+    }
 	}
 }
 
@@ -973,9 +1057,13 @@ footer {
   clear: left;
   p {
     text-align: center;
-    font-size: 12px;
+    font-size: 1rem;
     color: #CCC;
     margin: 20px 0 0;
+    a {
+    	border-bottom: .125em dotted;
+		border-bottom-color: rgba(0,0,0,.2);
+    }
   }
 }
 
@@ -1080,7 +1168,8 @@ FOUNDATION STYLES
     }
   }
   .button {
-    background-color: #2A78C7;
+    background-color: $white;
+    color: $primary-color;
   }
   .roof-menu {
     font-size: 1rem;
@@ -1095,6 +1184,9 @@ FOUNDATION STYLES
   .menu.simple {
     a.button {
       padding: 0.7rem 1rem;
+      &:focus {
+      	outline: -webkit-focus-ring-color auto 5px;
+      }
     }
   }
 }
@@ -1158,8 +1250,17 @@ div#offCanvasTop1 {
        @include grid-column(12);
      }
     .button {
-      background-color: #2A78C7;
+      background-color: $blue;
       width: 100%;
+      &:focus {
+      	outline: -webkit-focus-ring-color auto 5px;
+      }      
     }
   }
+}
+
+.menu-icon {
+	&:focus {
+		outline: -webkit-focus-ring-color auto 5px;
+	}
 }

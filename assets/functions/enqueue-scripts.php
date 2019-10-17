@@ -14,6 +14,9 @@ function site_scripts() {
     // Register main stylesheet
     wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/style.min.css', array(), '', 'all' );
 
+    // Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
+    wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.11.2/css/all.css', array(), '5.11.2', 'all' );
+
     // Comment reply script for threaded comments
     if ( is_singular() && comments_open() && (get_option('thread_comments') == 1) ) {
       wp_enqueue_script( 'comment-reply' );
