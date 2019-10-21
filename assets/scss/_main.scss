@@ -892,6 +892,9 @@ img.news {
   @include breakpoint(large) {
   	margin-right: 3rem;
   }
+  &.home {
+  	height: rem-calc(350);
+  }
  }
 
 

@@ -48,16 +48,17 @@
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<div class="margin10 entry-content">
 						<?php
-	// If a featured image is set, insert into layout and use Interchange
-	// to select the optimal image size per named media query.
-	if ( has_post_thumbnail( $post->ID ) ) :
-    ?>
+							// If a featured image is set, insert into layout and use Interchange
+							// to select the optimal image size per named media query.
+							if ( has_post_thumbnail( $post->ID ) ) :
+						    ?>
 
-	<div class="row">
-		<header class="featured-hero" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
-		</header>
-	</div>
-<?php endif;?>
+							<div class="row">
+								<header class="featured-hero home" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
+								</header>
+							</div>
+						<?php endif;?>
+						
 						<?php $frontpagecontent = the_content(); if ($frontpagecontent != '' ) : ?>
 						
 						<?php the_content(); ?>	

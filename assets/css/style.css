@@ -6024,6 +6024,8 @@ img.news {
   @media print, screen and (min-width: 64em) {
     .featured-hero {
       margin-right: 3rem; } }
+  .featured-hero.home {
+    height: 21.875rem; }
 
 /*********************
 IMAGE GALLERY STYLES
