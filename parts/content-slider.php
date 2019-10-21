@@ -1,7 +1,7 @@
 <div class="hero">	
 	<div class="row">
 			<div class="large-8 columns">
-				<img src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" class="radius-top" />
+				<img src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" class="radius-top" alt="<?php $the_content = get_the_content(); if ( !empty($the_content) ) { echo $the_content; } else { echo 'Homepage Slider'; };?>"/>
 			</div>
 			<div class="small-12 large-4 columns vertical radius-topright">
 				<div id="caption">
