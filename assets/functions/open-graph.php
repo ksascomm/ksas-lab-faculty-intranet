@@ -8,7 +8,7 @@
 	        {
  				$excerpt = strip_tags($post->post_content);
 				$excerpt = str_replace("", "'", $excerpt);
-				$excerpt = wp_trim_words($post->post_content, 25, '...');
+				$excerpt = wp_trim_words($post->post_content, 55, '...');
         	} 
         	else 
         	{
