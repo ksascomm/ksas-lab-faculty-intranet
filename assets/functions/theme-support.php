@@ -13,7 +13,7 @@ function joints_theme_support() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// Add Support for WP Controlled Title Tag
-	add_theme_support( 'title-tag' );
+	//add_theme_support( 'title-tag' );
 
 	// Add HTML5 Support
 	add_theme_support(
