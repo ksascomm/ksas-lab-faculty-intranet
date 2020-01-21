@@ -5,7 +5,7 @@
 			$slider_query = new WP_Query(
 			array(
 				'post_type' => 'slider',
-				'posts_per_page' => '2',
+				'posts_per_page' => '5',
 				'orderby' => 'menu_order',
 				'order' => 'ASC',
 			)
@@ -13,7 +13,7 @@
 			if ( $slider_query->have_posts() ) :
             ?>
 			
-			<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+			<div class="orbit" role="region" aria-label="Featured Images" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
 				<ul class="orbit-container">
 
 					<?php if ($slider_query->post_count > 1 ) : ?>
