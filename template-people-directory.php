@@ -39,7 +39,7 @@ get_header();
 				<div class="row">
 					<div class="large-12 columns">
 						<?php the_breadcrumb(); ?>
-						<?php get_template_part( 'parts/loop', 'page' ); ?>
+						<h1 class="page-title"><?php the_title(); ?></h1>
 					</div>
 				</div>
 			<?php endwhile; endif; ?>
@@ -79,6 +79,18 @@ get_header();
 				</ul>
 
 				<!-- Page Content -->
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+				<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
+					<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
+						<div class="entry-content" itemprop="articleBody">
+						    <?php the_content(); ?>
+						    <?php wp_link_pages(); ?>
+						</div> <!-- end article section -->					
+					</article> <!-- end article -->
+				<?php endwhile; endif; ?>
+				</div>
 			</div>
 	   </main>
 	   <!-- end #main -->
