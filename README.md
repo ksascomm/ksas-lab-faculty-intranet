@@ -1,4 +1,4 @@
-For Kreiger-based faculty members, labs, or intranets. Has vertical navigation. Doesn't require majority of KSAS-specific plugins. Based off [JointsWP]( http://jointswp.com/), built with Foundation 6.3.1.
+For Kreiger-based faculty members, labs, or intranets. Has vertical navigation. Doesn't require majority of KSAS-specific plugins. Based off [JointsWP]( http://jointswp.com/), built with Foundation 6.6.1.
 
 ### Getting Started With Gulp
 - Install [node.js](https://nodejs.org).
