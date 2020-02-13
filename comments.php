@@ -1,12 +1,19 @@
 <?php
-	if ( post_password_required() ) {
+/**
+ * Displays current comments and comment form. Works with includes/comments.php.
+ *
+ * For more info: https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comments/
+ */ 
+
+if ( post_password_required() ) {
 	return;
-	}
+}
 ?>
 
 <div id="comments" class="comments-area">
 
-	
+	<?php // You can start editing here ?>
+
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
@@ -52,15 +59,9 @@
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-	<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'jointswp' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'jointswp' ); ?></p>
 	<?php endif; ?>
 
-	<?php
-    comment_form(
-        array(
-			'class_submit' => 'button',
-		)
-        );
-?>
+	<?php comment_form(array('class_submit'=>'button')); ?>
 
 </div><!-- #comments -->

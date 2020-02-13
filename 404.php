@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 			
-	<div id="content">
+	<div class="content">
 
-		<div id="inner-content" class="expanded row">
+		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 	
 
-			<div class="hide-for-small-only medium-3 columns">
+			<div class="hide-for-small-only medium-3 cell">
 			
 		    	<?php joints_sidebar_nav(); ?>
 
@@ -15,9 +15,9 @@
 
 		    </div>
 	
-			<main id="main" class="medium-9 columns" role="main">
+			<main class="main small-12 medium-9 cell" role="main">
 
-				<article class="small-12 medium-9 columns" id="content-not-found">
+				<article class="content-not-found">
 				
 					<header class="article-header">
 						<h1><?php _e('Page Not Found', 'jointswp'); ?></h1>

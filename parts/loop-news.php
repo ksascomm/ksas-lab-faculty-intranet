@@ -1,3 +1,11 @@
+<?php
+/**
+ * Template part for displaying posts
+ *
+ * Used for single news posts on front page.
+ */
+?>
+
 <article <?php post_class(''); ?> itemscope itemtype="http://schema.org/BlogPosting" aria-labelledby="post-<?php the_ID(); ?>">
 						
 	<header class="article-header" aria-label="<?php the_title(); ?>">	

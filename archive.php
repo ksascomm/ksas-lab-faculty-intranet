@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 			
-	<div id="content">
+	<div class="content">
 	
-		<div id="inner-content" class="expanded row">
+		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 
 				
 			<div class="hide-for-small-only medium-3 columns">
@@ -13,7 +13,7 @@
 		    	</div>
 		    </div>
 
-		    <main id="main" class="small-12 medium-9 columns" role="main">
+		    <main class="main small-12 medium-9 columns" role="main">
 			    
 		    	<header>
 		    		<h1 class="page-title"><?php the_archive_title(); ?></h1>

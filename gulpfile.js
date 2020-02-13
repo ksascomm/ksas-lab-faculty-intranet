@@ -1,201 +1,190 @@
-// Grab our gulp packages
+// GULP PACKAGES
+// Most packages are lazy loaded
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    sourcemaps = require('gulp-sourcemaps'),
-    cssnano = require('gulp-cssnano'),
-    jshint = require('gulp-jshint'),
-    stylish = require('jshint-stylish'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    rename = require('gulp-rename'),
-    browserSync = require('browser-sync'),
-    plumber = require('gulp-plumber'),
-    bower = require('gulp-bower');
-    imageop = require('gulp-image-optimization');
-    babel = require('gulp-babel'),
-    phpcs = require('gulp-phpcs'),
-    argv = require('yargs').argv;
+    browserSync = require('browser-sync').create(),
+    filter = require('gulp-filter'),
+    touch = require('gulp-touch-cmd'),
+    plugin = require('gulp-load-plugins')();
 
-var $ = require('gulp-load-plugins')();
-var config = { 
-     sassPath: './resources/sass',
-     bowerDir: './bower_components' 
-}
 
-var URL = 'sitesdot.local/template-research';
+// GULP VARIABLES
+// Modify these variables to match your project needs
 
-var PATHS = {
-  phpcs: [
-    '**/*.php',
-    '!wpcs',
-    '!wpcs/**',
-  ]
+// Set local URL if using Browser-Sync
+const LOCAL_URL = 'https://sitesdot.local/template-research';
+
+// Set path to Foundation files
+const FOUNDATION = 'node_modules/foundation-sites';
+
+// Select Foundation components, remove components project will not use
+const SOURCE = {
+  scripts: [
+    // Lets grab what-input first
+      'node_modules/what-input/dist/what-input.js',
+
+    // Foundation core - needed if you want to use any of the components below
+    FOUNDATION + '/dist/js/plugins/foundation.core.js',
+    FOUNDATION + '/dist/js/plugins/foundation.util.*.js',
+
+    // Pick the components you need in your project
+    //FOUNDATION + '/dist/js/plugins/foundation.abide.js',
+    FOUNDATION + '/dist/js/plugins/foundation.accordion.js',
+    FOUNDATION + '/dist/js/plugins/foundation.accordionMenu.js',
+    FOUNDATION + '/dist/js/plugins/foundation.drilldown.js',
+    FOUNDATION + '/dist/js/plugins/foundation.dropdown.js',
+    FOUNDATION + '/dist/js/plugins/foundation.dropdownMenu.js',
+    FOUNDATION + '/dist/js/plugins/foundation.equalizer.js',
+    FOUNDATION + '/dist/js/plugins/foundation.interchange.js',
+    FOUNDATION + '/dist/js/plugins/foundation.offcanvas.js',
+    FOUNDATION + '/dist/js/plugins/foundation.orbit.js',
+    FOUNDATION + '/dist/js/plugins/foundation.responsiveMenu.js',
+    //FOUNDATION + '/dist/js/plugins/foundation.responsiveToggle.js',
+    //FOUNDATION + '/dist/js/plugins/foundation.reveal.js',
+    //FOUNDATION + '/dist/js/plugins/foundation.slider.js',
+    FOUNDATION + '/dist/js/plugins/foundation.smoothScroll.js',
+    //FOUNDATION + '/dist/js/plugins/foundation.magellan.js',
+    //FOUNDATION + '/dist/js/plugins/foundation.sticky.js',
+    FOUNDATION + '/dist/js/plugins/foundation.tabs.js',
+    FOUNDATION + '/dist/js/plugins/foundation.responsiveAccordionTabs.js',
+    //FOUNDATION + '/dist/js/plugins/foundation.toggler.js',
+    //FOUNDATION + '/dist/js/plugins/foundation.tooltip.js',
+
+    // Place custom JS here, files will be concantonated, minified if ran with --production
+    'assets/scripts/js/**/*.js',
+    ],
+
+  // Scss files will be concantonated, minified if ran with --production
+  styles: 'assets/styles/scss/**/*.scss',
+
+  // Images placed here will be optimized
+  images: 'assets/images/src/**/*',
+
+  php: '**/*.php'
 };
-// IF YOU UPDATE FOUNDATION VIA BOWER, RUN THIS TO SAVE UPDATED FILES TO /VENDOR
-gulp.task('bower', function() {
-  return bower({ cmd: 'update'})
-    .pipe(gulp.dest('vendor/'))
-});    
 
-gulp.task('browser-sync', ['styles'], function() {
+const ASSETS = {
+  styles: 'assets/styles/',
+  scripts: 'assets/scripts/',
+  images: 'assets/images/',
+  all: 'assets/'
+};
 
-    var files = [
-            'assets/css/*.css',
-            '**/*.php',
-            'assets/images/**/*.{png,jpg,gif}',
-          ];
-  
-    browserSync.init(files, {
-        proxy: URL,
-    });
-});        
-    
-// Compile Sass, Autoprefix and minify
-gulp.task('styles', function() {
-    return gulp.src('./assets/scss/**/*.scss')
-        .pipe(plumber(function(error) {
+const JSHINT_CONFIG = {
+  "node": true,
+  "globals": {
+    "document": true,
+    "window": true,
+    "jQuery": true,
+    "$": true,
+    "Foundation": true
+  }
+};
+
+// GULP FUNCTIONS
+// JSHint, concat, and minify JavaScript
+gulp.task('scripts', function() {
+
+  // Use a custom filter so we only lint custom JS
+  const CUSTOMFILTER = filter(ASSETS.scripts + 'js/**/*.js', {restore: true});
+
+  return gulp.src(SOURCE.scripts)
+    .pipe(plugin.plumber(function(error) {
             gutil.log(gutil.colors.red(error.message));
             this.emit('end');
         }))
-        .pipe(sourcemaps.init()) // Start Sourcemaps
-        .pipe(sass())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
+    .pipe(plugin.sourcemaps.init())
+    .pipe(plugin.babel({
+      presets: ['es2015'],
+      compact: true,
+      ignore: ['what-input.js']
+    }))
+    .pipe(CUSTOMFILTER)
+      .pipe(plugin.jshint(JSHINT_CONFIG))
+      .pipe(plugin.jshint.reporter('jshint-stylish'))
+      .pipe(CUSTOMFILTER.restore)
+    .pipe(plugin.concat('scripts.js'))
+    .pipe(plugin.uglify())
+    .pipe(plugin.sourcemaps.write('.')) // Creates sourcemap for minified JS
+    .pipe(gulp.dest(ASSETS.scripts))
+    .pipe(touch());
+});
+
+// Compile Sass, Autoprefix and minify
+gulp.task('styles', function() {
+  return gulp.src(SOURCE.styles)
+    .pipe(plugin.plumber(function(error) {
+            gutil.log(gutil.colors.red(error.message));
+            this.emit('end');
         }))
-        .pipe(gulp.dest('./assets/css/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(cssnano())
-        .pipe(sourcemaps.write('.')) // Creates sourcemaps for minified styles
-        .pipe(gulp.dest('./assets/css/'))
-}); 
-
-// Compile Fontawesome fonts, place in /fonts directory
-gulp.task('icons', function() { 
-    return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*') 
-        .pipe(gulp.dest('./assets/fonts')); 
-});
-    
-// JSHint, concat, and minify JavaScript
-gulp.task('site-js', function() {
-  return gulp.src([ 
-    
-           // Grab your custom scripts
-        './assets/js/scripts/*.js'
-        
-  ])
-    .pipe(plumber())
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(concat('scripts.js'))
-    .pipe(gulp.dest('./assets/js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest('./assets/js'))
-    .pipe(browserSync.stream());
-});    
-
-// JSHint, concat, and minify Foundation JavaScript
-gulp.task('foundation-js', function() {
-  return gulp.src([ 
-        
-        // Foundation core - needed if you want to use any of the components below
-          './vendor/foundation-sites/js/foundation.core.js',
-          './vendor/foundation-sites/js/foundation.util.*.js',
-          
-          // Pick the components you need in your project
-          //'./vendor/foundation-sites/js/foundation.abide.js',
-          './vendor/foundation-sites/js/foundation.accordion.js',
-          './vendor/foundation-sites/js/foundation.accordionMenu.js',
-          './vendor/foundation-sites/js/foundation.drilldown.js',
-          './vendor/foundation-sites/js/foundation.dropdown.js',
-          './vendor/foundation-sites/js/foundation.dropdownMenu.js',
-          './vendor/foundation-sites/js/foundation.equalizer.js',
-          './vendor/foundation-sites/js/foundation.interchange.js',
-          //'./vendor/foundation-sites/js/foundation.magellan.js',
-          './vendor/foundation-sites/js/foundation.offcanvas.js',
-          './vendor/foundation-sites/js/foundation.orbit.js',
-          './vendor/foundation-sites/js/foundation.responsiveMenu.js',
-          //'./vendor/foundation-sites/js/foundation.responsiveToggle.js',
-          //'./vendor/foundation-sites/js/foundation.reveal.js',
-          //'./vendor/foundation-sites/js/foundation.slider.js',
-          //'./vendor/foundation-sites/js/foundation.sticky.js',
-          './vendor/foundation-sites/js/foundation.tabs.js',
-          //'./vendor/foundation-sites/js/foundation.toggler.js',
-          //'./vendor/foundation-sites/js/foundation.tooltip.js',
-  ])
-  .pipe(babel({
-    presets: ['es2015'],
-      compact: true
-  }))
-    .pipe(sourcemaps.init())
-    .pipe(concat('foundation.js'))
-    .pipe(gulp.dest('./assets/js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('.')) // Creates sourcemap for minified Foundation JS
-    .pipe(gulp.dest('./assets/js'))
+    .pipe(plugin.sourcemaps.init())
+    .pipe(plugin.sass())
+    .pipe(plugin.autoprefixer({
+        browsers: [
+          'last 2 versions',
+          'ie >= 9',
+        'ios >= 7'
+        ],
+        cascade: false
+    }))
+    .pipe(plugin.cssnano({safe: true, minifyFontValues: {removeQuotes: false}}))
+    .pipe(plugin.sourcemaps.write('.'))
+    .pipe(gulp.dest(ASSETS.styles))
+    .pipe(touch());
 });
 
-gulp.task('images', function(cb) {
-    gulp.src(['assets/images/**/*.png','assets/images/**/*.jpg','assets/images/**/*.gif','assets/images/**/*.jpeg']).pipe(imageop({
-        optimizationLevel: 5,
-        progressive: true,
-        interlaced: true
-    })).pipe(gulp.dest('assets/images')).on('end', cb).on('error', cb);
+// Optimize images, move into assets directory
+gulp.task('images', function() {
+  return gulp.src(SOURCE.images)
+    .pipe(plugin.imagemin())
+    .pipe(gulp.dest(ASSETS.images))
+    .pipe(touch());
 });
 
-// Create a default task 
-gulp.task('default', function() {
-  gulp.start('styles', 'site-js', 'foundation-js', 'icons');
+ gulp.task( 'translate', function () {
+     return gulp.src( SOURCE.php )
+         .pipe(plugin.wpPot( {
+             domain: 'jointswp',
+             package: 'Example project'
+         } ))
+        .pipe(gulp.dest('file.pot'));
+ });
+
+// Browser-Sync watch files and inject changes
+gulp.task('browsersync', function() {
+
+    // Watch these files
+    var files = [
+      SOURCE.php,
+    ];
+
+    browserSync.init(files, {
+      proxy: LOCAL_URL,
+      https: {
+        key: "/Volumes/Macintosh HD 2/pineapple/localhost.key",
+        cert: "/Volumes/Macintosh HD 2/pineapple/localhost.crt"
+      }
+    });
+
+    gulp.watch(SOURCE.styles, gulp.parallel('styles')).on('change', browserSync.reload);
+    gulp.watch(SOURCE.scripts, gulp.parallel('scripts')).on('change', browserSync.reload);
+    gulp.watch(SOURCE.images, gulp.parallel('images')).on('change', browserSync.reload);
+
 });
 
-// Watch files for changes
-gulp.task('watch', ['styles', 'browser-sync', 'icons'], function() {
-
-  function logFileChange(event) {
-    var fileName = require('path').relative(__dirname, event.path);
-    console.log('[' + 'WATCH'.green + '] ' + fileName.magenta + ' was ' + event.type + ', running tasks...');
-  }
+// Watch files for changes (without Browser-Sync)
+gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('./assets/scss/**/*.scss', ['styles']) 
-    .on('change', function(event) {
-      logFileChange(event);
-    });
+  gulp.watch(SOURCE.styles, gulp.parallel('styles'));
 
-  // Watch site-js files
-  gulp.watch('./assets/js/scripts/*.js', ['site-js'])
-    .on('change', function(event) {
-      logFileChange(event);
-    });
-  
-  // Watch foundation-js files
-  gulp.watch('./vendor/foundation-sites/js/*.js', ['foundation-js']);
+  // Watch scripts files
+  gulp.watch(SOURCE.scripts, gulp.parallel('scripts'));
+
+  // Watch images files
+  gulp.watch(SOURCE.images, gulp.parallel('images'));
 
 });
 
-// PHP Code Sniffer task
-gulp.task('phpcs', function() {
-  return gulp.src(PATHS.phpcs)
-    .pipe(phpcs({
-      bin: 'wpcs/vendor/bin/phpcs',
-      standard: './codesniffer.ruleset.xml',
-      showSniffCode: true,
-    }))
-    .pipe($.phpcs.reporter('log'));
-});
-
-// PHP Code Beautifier task
-gulp.task('phpcbf', function () {
-  return gulp.src(PATHS.phpcs)
-  .pipe($.phpcbf({
-    bin: 'wpcs/vendor/bin/phpcbf',
-    standard: './codesniffer.ruleset.xml',
-    warningSeverity: 0
-  }))
-  .on('error', $.util.log)
-  .pipe(gulp.dest('.'));
-});
+// Run styles, scripts and foundation-js
+gulp.task('default', gulp.parallel('styles', 'scripts', 'images'));

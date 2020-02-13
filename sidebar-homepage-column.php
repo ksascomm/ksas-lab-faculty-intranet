@@ -1,6 +1,6 @@
 <?php if ( is_active_sidebar( 'homepage1' ) ) : ?>
 
-	<div id="homepage1" class="large-5 columns sidebar" role="complementary">
+	<div id="homepage1" class="large-5 cell sidebar" role="complementary">
 
 		<?php dynamic_sidebar( 'homepage1' ); ?>
 
@@ -11,7 +11,7 @@
 
 <?php if ( is_active_sidebar( 'homepage2' ) ) : ?>
 
-	<div id="homepage2" class="large-5 columns sidebar" role="complementary">
+	<div id="homepage2" class="large-5 cell sidebar" role="complementary">
 
 		<?php dynamic_sidebar( 'homepage2' ); ?>
 

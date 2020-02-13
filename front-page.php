@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<div id="content">
+	<div class="content">
 		<?php
 			$theme_option = flagship_sub_get_global_options();
 			$slider_query = new WP_Query(
@@ -30,10 +30,10 @@
 			</div>
 			<?php endif; ?>
     
-		<div id="inner-content" class="expanded row">
+		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 
 					
-			<div class="hide-for-small-only medium-3  columns">
+			<div class="hide-for-small-only medium-3 cell">
 		    	<?php joints_sidebar_nav(); ?>
 
 		    	<div class="sidebar-nav search">
@@ -43,7 +43,7 @@
 		    </div>	
 
 
-		    <main id="main" class="medium-9 columns" role="main">
+		    <main class="main medium-9 cell" role="main">
 				
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<div class="margin10 entry-content">
@@ -53,10 +53,10 @@
 							if ( has_post_thumbnail( $post->ID ) ) :
 						    ?>
 
-							<div class="row">
-								<header class="featured-hero home" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
-								</header>
-							</div>
+							
+							<header class="featured-hero home" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
+							</header>
+							
 						<?php endif;?>
 						
 						<?php $frontpagecontent = the_content(); if ($frontpagecontent != '' ) : ?>
@@ -98,13 +98,13 @@
 				</div>
 				<?php endif; ?>
 				<?php if ( is_active_sidebar( 'homepage1' ) && is_active_sidebar( 'homepage2' ) ) : ?>
-				    <div class="row" id="hp-buckets">
-				    	<div class="small-12 medium-6 columns hide-for-print" role="complementary">
+				    <div class="grid-x grid-margin-x" id="hp-buckets">
+				    	<div class="small-12 medium-6 cell hide-for-print" role="complementary">
 				    		<div class="primary callout">
 				    			<?php dynamic_sidebar('homepage1'); ?>
 				    		</div> 
 						</div>
-						<div class="small-12 medium-6 columns hide-for-print" role="complementary">
+						<div class="small-12 medium-6 cell hide-for-print" role="complementary">
 							<div class="primary callout">
 				    			<?php dynamic_sidebar('homepage2'); ?>
 				    		</div> 

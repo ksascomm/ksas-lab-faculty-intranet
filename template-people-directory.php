@@ -20,30 +20,30 @@ get_header();
 	$role_classes = implode(' ', $role_slugs);
 	?>
 
-<div id="content">
-	<div id="inner-content" class="expanded row">
+	<div class="content">
+	
+		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 
-		<div class="hide-for-small-only medium-3 columns">
+			<div class="hide-for-small-only medium-3 cell">
 
-	    	<?php joints_sidebar_nav(); ?>
+		    	<?php joints_sidebar_nav(); ?>
 
-	    	<div class="sidebar-nav search">
-	    		<hr><?php get_search_form(); ?>
-	    	</div>
-
-	    </div>
-
-		
-		<main id="main" class="medium-9 columns" role="main">
+		    	<div class="sidebar-nav search">
+		    		<hr><?php get_search_form(); ?>
+		    	</div>
+		    	
+		    </div>
+		    
+		    <main class="main medium-9 cell" role="main">
 			<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
-				<div class="row">
-					<div class="large-12 columns">
+				<div class="grid-x">
+					<div class="large-12 cell">
 						<?php the_breadcrumb(); ?>
 						<h1 class="page-title"><?php the_title(); ?></h1>
 					</div>
 				</div>
 			<?php endwhile; endif; ?>
-		    <div class="row" id="fields_container">
+		    <div class="grid-x" id="fields_container">
 				<ul id="directory">
 				<?php foreach ($roles as $role ) : ?>
 					<?php
@@ -80,8 +80,8 @@ get_header();
 
 				<!-- Page Content -->
 			</div>
-			<div class="row">
-				<div class="large-12 columns">
+			<div class="grid-x">
+				<div class="large-12 cell">
 				<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
 						<div class="entry-content" itemprop="articleBody">

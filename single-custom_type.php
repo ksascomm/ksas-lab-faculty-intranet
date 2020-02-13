@@ -15,21 +15,21 @@ single-bookmarks.php
 
 <?php get_header(); ?>
 			
-<div id="content">
+	<div class="content">
+	
+		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 
-		<div id="inner-content" class="expanded row">
-
-			<div class="hide-for-small-only medium-3 columns">
+			<div class="hide-for-small-only medium-3 cell">
 
 		    	<?php joints_sidebar_nav(); ?>
 
 		    	<div class="sidebar-nav search">
 		    		<hr><?php get_search_form(); ?>
 		    	</div>
-			    	
-			</div>
-
-			 <main id="main" class="medium-9 columns" role="main">
+		    	
+		    </div>
+		    
+		    <main class="main medium-9 cell" role="main">
 		
 				<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
 		

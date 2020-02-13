@@ -1,15 +1,21 @@
-<article <?php post_class(''); ?> itemscope itemtype="http://schema.org/BlogPosting" aria-labelledby="post-<?php the_ID(); ?>">
-	<header class="article-header" aria-label="<?php the_title(); ?>">	
-		<h1 class="entry-title single-title" itemprop="headline">
-			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?></a>
-		</h1>
+<?php
+/**
+ * Template part for displaying posts
+ *
+ * Used for single, index, archive, search.
+ */
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class('news-article'); ?> role="article">					
+	
+	<header class="article-header">
+		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 		<?php get_template_part( 'parts/content', 'byline' ); ?>
 	</header> <!-- end article header -->
 					
-	<div class="entry-content" itemprop="articleBody">
-		<?php the_excerpt('<button class="tiny">Read more...</button>'); ?>
-	</div> <!-- end article section -->					
-	
-	<hr>	
-								    						
+	<section class="entry-content" itemprop="text">
+		<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
+		<?php the_excerpt('<button class="tiny">' . __( 'Read more...', 'jointswp' ) . '</button>'); ?>
+	</section> <!-- end article section -->
+				    						
 </article> <!-- end article -->

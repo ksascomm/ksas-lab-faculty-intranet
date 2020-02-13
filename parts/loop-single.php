@@ -1,3 +1,10 @@
+<?php
+/**
+ * Template part for displaying a single post
+ */
+?>
+
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="article-header">
@@ -12,9 +19,9 @@
 			$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 			$thumb_url = $thumb_url_array[0];
 		?>
-    <div class="imageblockleft small-centered medium-uncentered columns">
+    <div class="imageblockleft small-centered medium-uncentered cell">
     		<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-					<a href="<?php echo $thumb_url; ?>" data-fancybox>
+					<a href="<?php echo $thumb_url; ?>" data-fancybox="gallery">
 					<?php if ( ! is_singular('ai1ec_event') ) : ?>
 						<?php
                         the_post_thumbnail(

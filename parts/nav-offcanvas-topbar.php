@@ -1,3 +1,11 @@
+<?php
+/**
+ * The off-canvas menu uses the Off-Canvas Component
+ *
+ * For more info: http://jointswp.com/docs/off-canvas-menu/
+ */
+?>
+
 <!-- By default, this menu will use off-canvas for small
 	 and a topbar for medium-up -->
 <div class="roof hide-for-small-only">	 

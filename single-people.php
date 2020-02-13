@@ -1,16 +1,18 @@
 <?php get_header(); ?>
 			
-<div id="content">
+	<div class="content">
+	
+		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 
-	<div id="inner-content" class="expanded row">
+			<div class="hide-for-small-only medium-3 cell">
 
-		<div class="hide-for-small-only medium-3 columns">
+		    	<?php joints_sidebar_nav(); ?>
 
-	    	<?php joints_sidebar_nav(); ?>
-
-	    	<div class="sidebar-nav search">
-	    		<hr><?php get_search_form(); ?>
-	    	</div>
+		    	<div class="sidebar-nav search">
+		    		<hr><?php get_search_form(); ?>
+		    	</div>
+		    	
+		    </div>
 	    	
 			<?php if (has_term('', 'role') && ! has_term('job-market-candidate', 'role') ) : ?>
 				<div class="sidebar-nav search">
@@ -42,7 +44,7 @@
 
 	    </div>
 
-		 <main id="main" class="medium-9 columns" role="main">
+		 <main class="main medium-9 cell" role="main">
 				<ul class="breadcrumbs">
 					<li><a href="<?php echo site_url(); ?>" title="Home">Home</a>
 					<li><a href="<?php echo site_url(); ?>/people/" title="People">People</a></li>
@@ -51,8 +53,8 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 					<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
-					<div class="row">
-						<div class="small-12 columns">
+					<div class="grid-x">
+						<div class="small-12 cell">
 
 						<header class="article-header"> 
 							<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
@@ -62,8 +64,8 @@
 						</header>
 						</div>
 					</div>
-					<div class="row">
-						<div class="small-12 medium-4 columns bio">
+					<div class="grid-x">
+						<div class="small-12 medium-4 cell bio">
 							<?php if ( has_post_thumbnail() ) { ?> 
 								<?php the_post_thumbnail(
 							        'full', array(
@@ -73,7 +75,7 @@
 								?>
 							<?php } ?>			    
 						</div>
-					<div class="small-12 medium-8 columns end">
+						<div class="small-12 medium-8 cell end">
 
 						    <p class="listing">
 						    	<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
@@ -115,10 +117,10 @@
 														<?php if (get_post_meta($post->ID, 'ecpt_microsoft_id', true) ) : ?>
 						    		<span class="fa fa-windows"></span> <a href="https://academic.microsoft.com/#/detail/<?php echo get_post_meta($post->ID, 'ecpt_microsoft_id', true); ?>" target="_blank"> Microsoft Academic Profile</a>
 								<?php endif; ?>
-													</p>
-											</div>
-											</div>
-									<?php endwhile; endif; ?>
+							</p>
+						</div>
+					</div>
+				<?php endwhile; endif; ?>
 			</article>	
 		</main> <!-- end #main -->
 	</div> <!-- end #inner-content -->

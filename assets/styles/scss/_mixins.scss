@@ -1,0 +1,164 @@
+/******************************************************************
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants.
+
+******************************************************************/
+
+/*********************
+TOOLS
+*********************/
+
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+.image-replacement {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/*********************
+COLORS
+*********************/
+$primary-color: #002d72;
+$blue: #0057AC;
+$black: #31261D;
+$oldblack: #2C2C33;
+$green: #007a53;      //green
+$red: #8a2a2b;        //red
+$rust: #6f2c3f;       //rust
+$grey: #E5E2E0;       //grey
+$darkgrey: #b4b2ad;   //dark grey
+$lightgrey: #f4f4f4;
+$spirit: #68ace5;
+$charcoal: #4a484c;
+
+/*********************
+TYPOGRAPHY
+*********************/
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('assets/fonts/font-name.eot');
+    	src: url('assets/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('assets/fonts/font-name.woff') format('woff'),
+             url('assets/fonts/font-name.ttf') format('truetype'),
+             url('assets/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+
+@font-face {
+  font-family: 'quadon-medium';
+  src: url('../fonts/quadon/Quadon-Medium.eot');
+  src: url('../fonts/quadon/Quadon-Medium.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/quadon/Quadon-Medium.woff') format('woff'),
+       url('../fonts/quadon/Quadon-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'quadon-extrabold';
+  src: url('../fonts/quadon/Quadon-ExtraBold.eot');
+  src: url('../fonts/quadon/Quadon-ExtraBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/quadon/Quadon-ExtraBold.woff') format('woff'),
+       url('../fonts/quadon/Quadon-ExtraBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gentona-light';
+  src: url('../fonts/gentona/Gentona-Light.eot');
+  src: url('../fonts/gentona/Gentona-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gentona/Gentona-Light.woff') format('woff'),
+       url('../fonts/gentona/Gentona-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gentona-semibold';
+  src: url('../fonts/gentona/Gentona-SemiBold.eot');
+  src: url('../fonts/gentona/Gentona-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gentona/Gentona-SemiBold.woff') format('woff'),
+       url('../fonts/gentona/Gentona-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gentona-bold';
+  src: url('../fonts/gentona/Gentona-Bold.eot');
+  src: url('../fonts/gentona/Gentona-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gentona/Gentona-Bold.woff') format('woff'),
+       url('../fonts/gentona/Gentona-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'flagship-icon';
+  src:url('../fonts/flagship/flagship-icon.eot');
+}
+@font-face {
+  font-family: 'flagship-icon';
+  src:url('../fonts/flagship/flagship-icon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/flagship/flagship-icon.svg#flagship-icon') format('svg'),
+    url('../fonts/flagship/flagship-icon.woff') format('woff'),
+    url('../fonts/flagship/flagship-icon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-header: 'quadon-medium', 'Helvetica Neue', Roboto, sans-serif;
+$font-header-weight: 400;
+$font-header-extrabold: 'quadon-extrabold', 'Helvetica Neue', Roboto, sans-serif;
+$font-header-extrabold-weight: 700;
+$font-stack: 'gentona-light', 'Helvetica Neue', Roboto,  sans-serif;
+$font-stack-weight: 300;
+$font-stack-semibold: 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+$font-stack-semibold-weight: 600;
+$font-stack-bold: 'gentona-bold', 'Helvetica Neue', Roboto, sans-serif;
+$font-stack-bold-weight: 700;
+$flagship-icon: 'icomoon', 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+$font-awesome: FontAwesome, 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+
+//Use the best ampersand - http://simplebits.com/notebook/2008/08/14/ampersands-2/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic;
+}
+
+//strong, b, .bold
+%extend_1 {
+  font-family: $font-stack-semibold;
+  font-weight: $font-stack-semibold-weight;
+  font-style: normal;
+}
+
+//.b.em, .strong.em
+%extend_2 {
+  font-family: $font-stack;
+  font-weight: $font-stack-weight;
+  font-style: italic;
+}
+
+/*********************
+CSS3 GRADIENTS.
+*********************/
+
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+	background-color: $to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient(top, $from, $to);
+	background-image: -moz-linear-gradient(top, $from, $to);
+	background-image: -o-linear-gradient(top, $from, $to);
+	background-image: linear-gradient(to bottom, $from, $to);
+}
+
+

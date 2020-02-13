@@ -1,4 +1,5 @@
-<div class="small-12 large-9 columns">
+<div class="grid-x">
+<div class="small-12 large-9 cell">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
 							
 		<?php
@@ -9,7 +10,7 @@
 
 		<header class="featured-hero" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
 		</header>
-			<div class="row">
+			<div class="grid-x">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</div>	
 
@@ -25,7 +26,7 @@
 	</article> <!-- end article -->
 </div>
 
-<aside class="small-12 large-3 columns sidebar" id="sidebar1">
+<aside class="small-12 large-3 cell" id="sidebar1">
 					
 	<!-- Page Specific Sidebar -->
 	<?php
@@ -35,4 +36,5 @@
 	?>
 	<!-- END Page Specific Sidebar -->
 
-</saide>
+</aside>
+</div>

@@ -1,0 +1,41 @@
+/*
+Description: Used to style the content editor in posts and pages
+*/
+
+body { 
+	font-family: "gentona-light","Helvetica Neue",Roboto,sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	color: #31261d;
+}
+
+.rich-text.editor-rich-text__editable.block-editor-rich-text__editable.wp-block-button__link {
+	font-size: 18px;
+}
+
+.wp-block-file *+.wp-block-file__button {
+    display: none;
+}
+
+.wp-block-button__link {
+	display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    padding: .85em 1em;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color .25s ease-out,color .25s ease-out;
+    font-family: inherit;
+    font-size: .9rem;
+    -webkit-appearance: none;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #002d72;
+    color: #fefefe;
+}
+
+.wp-block-button__link:hover {
+	background-color: #00050c;
+	color: #fff;
+}
