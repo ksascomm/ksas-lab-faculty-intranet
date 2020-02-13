@@ -560,11 +560,15 @@ POSTS & CONTENT STYLES
 	a.button {
 		color: $white;
 	}
+	padding: 1rem;
+	margin-right: 1rem;
 }
 
 .orbit {
 	@include breakpoint (large) {
 		margin-bottom: 1.5rem;
+	}
+	img {
 	}
 }
 
