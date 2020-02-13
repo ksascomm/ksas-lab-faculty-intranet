@@ -4,7 +4,6 @@ For Kreiger-based faculty members, labs, or intranets. Has vertical navigation. 
 - Install [node.js](https://nodejs.org).
 - Using the command line, navigate to your theme directory
 - Run npm install
-- Run gulp to confirm everything is working
 
 ### Watching for Changes
 ```bash
