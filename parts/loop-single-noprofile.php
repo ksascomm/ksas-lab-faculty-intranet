@@ -1,5 +1,5 @@
-<li class="person <?php echo get_the_roles($post); ?>">
-<div class="media-object">
+<li class="person">
+	<div class="media-object">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
 				<div class="media-object-section hide-for-print">
