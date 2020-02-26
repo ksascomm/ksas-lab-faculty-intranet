@@ -9,10 +9,20 @@
  ?>
  					<footer class="footer hide-for-print" role="contentinfo">
 						<div class="inner-footer">
-		    				<div class="grid-x" id="copyright">
+		    				<div class="grid-x">
+				  				<div class="small-12 cell">
+				  					<div class="footer-links">
+					  					<ul class="menu align-center" role="menu">
+											<li role="menuitem"><a href="https://accessibility.jhu.edu/" target="_blank">Accessibility</a></li>	
+											<li role="menuitem"><a href="https://it.johnshopkins.edu/policies/privacystatement" target="_blank">Privacy Statement</a></li>
+										</ul>
+					  				</div>
+					  			</div>		    					
 								<div class="small-12 cell">
-									<?php $theme_option = flagship_sub_get_global_options(); ?>
-  									<p>&copy; <?php print date('Y'); ?> Johns Hopkins University, <?php echo $theme_option['flagship_sub_copyright']; ?></p>
+									<div class="copyright">
+										<?php $theme_option = flagship_sub_get_global_options(); ?>
+  										<p>&copy; <?php print date('Y'); ?> Johns Hopkins University, <?php echo $theme_option['flagship_sub_copyright']; ?></p>
+  									</div>
 					  			</div>
 					  		</div>
 					  		<div class="grid-x">
