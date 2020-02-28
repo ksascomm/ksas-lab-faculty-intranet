@@ -640,6 +640,12 @@ POSTS & CONTENT STYLES
 		display: inline;
 		float: right;
 	}
+	.aligncenter, img.aligncenter {
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		clear: both;
+	}
 
 	video, object {
 		max-width: 100%;
