@@ -71,6 +71,17 @@ Frontend styles for gutenberg blocks
   @include button();
 }
 
+/** === Image Block === */
+.wp-block-image {
+	.aligncenter {
+		img {
+			display: block;
+    		margin-right: auto;
+    		margin-left: auto;
+		}
+	}
+}
+
 /** === Gallery === */
 
 .entry-content {
