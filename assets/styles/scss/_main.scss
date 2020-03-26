@@ -281,6 +281,7 @@ HEADER STYLES
     	}
     	@include breakpoint(large) {
 	    	line-height: 1.1em;
+	    	max-width: 825px;
     	}
 		 	small {
 		 		font-size: 50%;
@@ -328,7 +329,7 @@ NAVIGATION STYLES
 		border-color: #fff transparent transparent;
 	}
 	img {
-	padding: .5rem 1rem;
+	//padding: .5rem 1rem;
 	//this is when menu breaks line
 	@include breakpoint (small) {
 	  display: block;
@@ -337,7 +338,7 @@ NAVIGATION STYLES
 	  max-width: 250px;
 	}
 	@include breakpoint (medium) {
-	  max-width: 275px;
+	  //max-width: 275px;
 	}
 	}
 	ul {
