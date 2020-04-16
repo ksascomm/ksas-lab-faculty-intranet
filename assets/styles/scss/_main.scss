@@ -381,12 +381,12 @@ NAVIGATION STYLES
 		@include breakpoint(large) {  
 		  @include xy-cell(4);
 		  	img {
-		  		max-width: 275px;
+		  		//max-width: 275px;
 			}
 		}
 		@include breakpoint(xlarge) {
 			img {
-		  		max-width: 300px;
+		  		//max-width: 300px;
 		  	}
 		}
 	}
