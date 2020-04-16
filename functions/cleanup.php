@@ -101,10 +101,19 @@ function my_gallery_default_type_set_link( $settings ) {
 }
 add_filter( 'media_view_settings', 'my_gallery_default_type_set_link');
 
-function remove_jquery_migrate( &$scripts) {
-	if(!is_admin()) {
-		$scripts->remove('jquery');
-		$scripts->add('jquery', false, array( 'jquery-core' ), '1.12.4');
-	}
+//function remove_jquery_migrate( &$scripts) {
+	//if(!is_admin()) {
+		//$scripts->remove('jquery');
+		//$scripts->add('jquery', false, array( 'jquery-core' ), '1.12.4');
+	//}
+//}
+//add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+function ksas_upgrade_jquery() {
+    if ( !is_admin() ) {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', '3.4.1', false);
+        wp_enqueue_script('jquery');
+    }
 }
-add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
+add_action( 'wp_enqueue_scripts', 'ksas_upgrade_jquery' );

@@ -28,7 +28,7 @@ add_action('wp_enqueue_scripts', 'site_scripts', 999);
 if (!(is_admin() )) {
     function defer_parsing_of_js ( $url ) {
         if ( FALSE === strpos( $url, '.js' ) ) return $url;
-        if ( strpos( $url, 'jquery.js' ) ) return $url;
+        if ( strpos( $url, 'jquery.min.js' ) ) return $url;
         if ( strpos( $url, 'scripts.js' ) ) return $url;
         // return "$url' defer ";
         return "$url' defer onload='";
