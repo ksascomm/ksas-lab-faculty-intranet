@@ -69,6 +69,7 @@ li.external a::after {
 	display:inline;
 	font-size:85%;
 	padding-left:4px;
+	font-display: block;
 }
 
 ul.nav {
@@ -118,6 +119,7 @@ ul.nav {
 	line-height:1;
 	-webkit-font-smoothing:antialiased;
 	margin-right:3px;
+	font-display: block;
 }
 
 /* Text meant only for screen readers. */
@@ -760,7 +762,7 @@ img.news {
 
 .main a {
   &[href$=".pdf"]:after, &[href$=".doc"]:after, &[href$=".docx"]:after, &[href$=".xls"]:after, &[href$=".xlsx"]:after, &[href$=".ppt"]:after, &[href$=".pptx"]:after {
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 5 Free';
     color: $black;
     font-size: 1.5rem;
     padding-left: .4rem;
