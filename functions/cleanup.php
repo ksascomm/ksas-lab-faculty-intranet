@@ -117,3 +117,32 @@ function ksas_upgrade_jquery() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'ksas_upgrade_jquery' );
+
+//Remove plugin CSS on specific page types
+function dequeue_css() {
+	if (is_home() || is_front_page()) {
+		wp_dequeue_style( 'tablepress-default' );
+		wp_dequeue_style( 'tablepress-responsive-tables' );
+		wp_dequeue_style( 'fancybox' );
+	}
+	if (is_singular(array('people', 'profile','testimonial','bulletinboard', 'ksasexhibits'))) {
+		wp_dequeue_style( 'tablepress-default' );
+		wp_dequeue_style( 'tablepress-responsive-tables' );
+		wp_dequeue_style( 'ai1ec_style' );
+		wp_dequeue_style( 'widget-calendar-pro-style' );
+		wp_dequeue_style( 'fancybox' );
+	}
+	if (is_page_template(array('template-people-directory'))) {
+		wp_dequeue_style( 'ai1ec_style' );
+		wp_dequeue_style( 'widget-calendar-pro-style' );
+		wp_dequeue_style( 'fancybox' );
+	}
+	if (is_page('people')) {
+		wp_dequeue_style( 'tablepress-default' );
+		wp_dequeue_style( 'tablepress-responsive-tables' );
+		wp_dequeue_style( 'ai1ec_style' );
+		wp_dequeue_style( 'widget-calendar-pro-style' );
+		wp_dequeue_style( 'fancybox' );
+	}
+}
+add_action( 'wp_print_styles', 'dequeue_css', 100 );
