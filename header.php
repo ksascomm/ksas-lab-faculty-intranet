@@ -18,7 +18,7 @@
 		<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/browserconfig.xml" />
 		
 		<?php wp_head(); ?>
-
+		<script src="https://kit.fontawesome.com/ed22ca715b.js" crossorigin="anonymous" defer></script>
 		<!-- Drop Google Analytics here -->
 		<?php get_template_part('parts/analytics'); ?>
 		<!-- end analytics -->
