@@ -129,19 +129,16 @@ function dequeue_css() {
 		wp_dequeue_style( 'tablepress-default' );
 		wp_dequeue_style( 'tablepress-responsive-tables' );
 		wp_dequeue_style( 'ai1ec_style' );
-		wp_dequeue_style( 'widget-calendar-pro-style' );
 		wp_dequeue_style( 'fancybox' );
 	}
 	if (is_page_template(array('template-people-directory'))) {
 		wp_dequeue_style( 'ai1ec_style' );
-		wp_dequeue_style( 'widget-calendar-pro-style' );
 		wp_dequeue_style( 'fancybox' );
 	}
 	if (is_page('people')) {
 		wp_dequeue_style( 'tablepress-default' );
 		wp_dequeue_style( 'tablepress-responsive-tables' );
 		wp_dequeue_style( 'ai1ec_style' );
-		wp_dequeue_style( 'widget-calendar-pro-style' );
 		wp_dequeue_style( 'fancybox' );
 	}
 }
