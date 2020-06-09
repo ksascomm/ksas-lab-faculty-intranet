@@ -85,11 +85,17 @@ Frontend styles for gutenberg blocks
 /** === Gallery === */
 
 .entry-content {
-	ul.wp-block-gallery {
+	ul.wp-block-gallery, ul.blocks-gallery-grid {
 		line-height: inherit !important;
 		letter-spacing: inherit !important;
 		li.blocks-gallery-item {
 			margin-bottom: 1rem !important;
+			a {
+				border-bottom: none !important;
+				&:after {
+					content: none !important;
+				}
+			}
 		}
 	}
 }
