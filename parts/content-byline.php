@@ -6,8 +6,6 @@
 
 <p class="byline">
 	<?php
-	printf( __( '%1$s', 'jointswp' ),
-		get_the_time( __('F j, Y', 'jointswp') ),
-	);
+	echo '<time class="updated" datetime="' . get_the_time( 'c' ) . '">' . sprintf(get_the_time('F j, Y') ) . '</time>';
 	?>
 </p>	
