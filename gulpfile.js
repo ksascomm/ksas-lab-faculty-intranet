@@ -12,7 +12,7 @@ var gulp  = require('gulp'),
 // Modify these variables to match your project needs
 
 // Set local URL if using Browser-Sync
-const LOCAL_URL = 'https://sitesdot.local/template-research';
+const LOCAL_URL = 'http://sitesdot.local/template-research';
 
 // Set path to Foundation files
 const FOUNDATION = 'node_modules/foundation-sites';
@@ -95,7 +95,7 @@ gulp.task('scripts', function() {
         }))
     .pipe(plugin.sourcemaps.init())
     .pipe(plugin.babel({
-      presets: ['es2015'],
+      presets: ['@babel/preset-env'],
       compact: true,
       ignore: ['what-input.js']
     }))
@@ -119,14 +119,7 @@ gulp.task('styles', function() {
         }))
     .pipe(plugin.sourcemaps.init())
     .pipe(plugin.sass())
-    .pipe(plugin.autoprefixer({
-        browsers: [
-          'last 2 versions',
-          'ie >= 9',
-        'ios >= 7'
-        ],
-        cascade: false
-    }))
+    .pipe(plugin.autoprefixer())
     .pipe(plugin.cssnano({safe: true, minifyFontValues: {removeQuotes: false}}))
     .pipe(plugin.sourcemaps.write('.'))
     .pipe(gulp.dest(ASSETS.styles))
@@ -160,10 +153,10 @@ gulp.task('browsersync', function() {
 
     browserSync.init(files, {
       proxy: LOCAL_URL,
-      https: {
+      /*https: {
         key: "/Volumes/Macintosh HD 2/pineapple/localhost.key",
         cert: "/Volumes/Macintosh HD 2/pineapple/localhost.crt"
-      }
+      }*/
     });
 
     gulp.watch(SOURCE.styles, gulp.parallel('styles')).on('change', browserSync.reload);

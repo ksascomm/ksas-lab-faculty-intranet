@@ -1,6 +1,6 @@
 {
   "name": "ksas-lab-faculty-intranet",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "For Kreiger-based faculty members, labs, or intranets",
   "repository": {
     "type": "git",
@@ -9,30 +9,37 @@
   "private": true,
   "homepage": "https://github.com/ksascomm/ksas-lab-faculty-intranet",
   "devDependencies": {
-    "babel-preset-es2015": "^6.5.0",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
     "browser-sync": "^2.26.12",
     "foundation-sites": "^6.6.3",
     "gulp": "github:gulpjs/gulp#v4.0.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-concat": "^2.5.2",
-    "gulp-cssnano": "^2.1.1",
-    "gulp-filter": "^5.0.0",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-jshint": "^1.11.0",
-    "gulp-load-plugins": "^1.4.0",
-    "gulp-newer": "^1.3.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^3.0.0",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-filter": "^6.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-load-plugins": "^2.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-touch-cmd": "^0.0.1",
-    "gulp-uglify": "^1.2.0",
-    "gulp-util": "^3.0.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
     "gulp-wp-pot": "^2.4.3",
-    "jshint-stylish": "^2.0.0",
-    "motion-ui": "^1.2.2",
+    "jshint": "^2.12.0",
+    "jshint-stylish": "^2.2.1",
+    "motion-ui": "^2.0.3",
     "what-input": "^5.2.10"
   },
+  "browserslist": [
+    "last 2 version",
+    "> 2%"
+  ],
   "scripts": {
     "postinstall": "npm run build",
     "build": "gulp",
@@ -42,5 +49,8 @@
     "watch": "gulp watch",
     "browsersync": "gulp browsersync",
     "update-foundation": "npm install foundation-sites"
+  },
+  "dependencies": {
+    "babel-loader": "^7.1.5"
   }
 }
