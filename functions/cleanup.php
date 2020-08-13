@@ -143,3 +143,12 @@ function dequeue_css() {
 	}
 }
 add_action( 'wp_print_styles', 'dequeue_css', 100 );
+
+// Remove inline width and height attributes for post thumbnails & image insert
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
+
+function remove_thumbnail_dimensions( $html ) {
+ 	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
