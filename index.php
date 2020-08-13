@@ -8,7 +8,7 @@ $theme_option = flagship_sub_get_global_options();
 	
 		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 
-			<div class="hide-for-small-only medium-3 cell">
+			<div class="hide-for-small-only siderail">
 
 		    	<?php joints_sidebar_nav(); ?>
 
@@ -18,7 +18,7 @@ $theme_option = flagship_sub_get_global_options();
 		    	
 		    </div>
 
-		    <main class="main medium-9 cell" role="main">
+		    <main class="main auto cell" role="main">
 
 				<?php
 				// If a featured image is set, insert into layout and use Interchange

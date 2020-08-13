@@ -4,7 +4,7 @@
 	
 		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 
-			<div class="hide-for-small-only medium-3 cell">
+			<div class="hide-for-small-only siderail">
 
 		    	<?php joints_sidebar_nav(); ?>
 
@@ -44,7 +44,7 @@
 
 	    </div>
 
-		 <main class="main medium-9 cell" role="main">
+		 <main class="main auto cell" role="main">
 				<ul class="breadcrumbs">
 					<li><a href="<?php echo site_url(); ?>" title="Home">Home</a>
 					<li><a href="<?php echo site_url(); ?>/people/" title="People">People</a></li>

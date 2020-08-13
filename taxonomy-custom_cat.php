@@ -19,7 +19,7 @@ taxonomy-shoes.php
 	
 		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 
-			<div class="hide-for-small-only medium-3 cell">
+			<div class="hide-for-small-only siderail">
 
 		    	<?php joints_sidebar_nav(); ?>
 
@@ -29,7 +29,7 @@ taxonomy-shoes.php
 		    	
 		    </div>
 		    
-		    <main class="main medium-9 cell" role="main">
+		    <main class="main auto cell" role="main">
 	
 		    <header>
 		    	<h1 class="page-title"><span><?php _e('Posts Categorized:', 'jointstheme'); ?></span> <?php single_cat_title(); ?></h1>

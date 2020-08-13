@@ -5,7 +5,7 @@
 		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 	
 
-			<div class="hide-for-small-only medium-3 cell">
+			<div class="hide-for-small-only siderail">
 			
 		    	<?php joints_sidebar_nav(); ?>
 
@@ -15,7 +15,7 @@
 
 		    </div>
 	
-			<main class="main small-12 medium-9 cell" role="main">
+			<main class="main auto cell" role="main">
 
 				<article class="content-not-found">
 				

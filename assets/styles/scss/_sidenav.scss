@@ -1,5 +1,11 @@
+.siderail {
+  margin-left: 0px !important;
+  background: $light-gray;
+  @include xy-cell(20%);
+  @include xy-cell-gutters;
+}
 .sidebar-nav.menu {
-  margin: 0.5rem 0 0;
+  //margin: 0 0 0;
   background: $light-gray;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -14,10 +20,16 @@
   }
 
   a {
-    font-size: 1.125rem;
+    font-size:.9rem;
+    @include breakpoint (large) {
+      font-size: 1rem;
+    }
+    @include breakpoint (xxlarge) {
+      font-size: 1.125rem;
+    }
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-
+    padding-left: 1.75rem;
     &:hover {
       background: rgba(#000, 0.05);
     }
@@ -57,6 +69,7 @@
 .sidebar-nav.search {
   background: $light-gray;
   padding: 0.5rem;
+  padding-left: 1.5rem;
   margin-bottom: 0.5rem;
   hr {
     border: 0;
