@@ -362,6 +362,7 @@ NAVIGATION STYLES
 		margin-right: inherit;
 	}
 	.nav-shield {
+		padding-top: 1rem;
 		@include breakpoint(small only) {
 		  @include xy-cell(12);
 		    img {
@@ -383,7 +384,7 @@ NAVIGATION STYLES
 		   //margin-top: 1rem;
 		}
 		@include breakpoint(large) {  
-		  @include xy-cell(4);
+		  @include xy-cell(5);
 		  	img {
 		  		//max-width: 275px;
 			}
@@ -395,6 +396,7 @@ NAVIGATION STYLES
 		}
 	}
 	.site-title {
+		padding-top: 1rem;
 		@include breakpoint(small only) {  
 		  width: 100%;
 		  text-align: center;
@@ -414,7 +416,7 @@ NAVIGATION STYLES
 		  }
 		}
 		@include breakpoint(large) {  
-		  @include xy-cell(8);
+		  @include xy-cell(7);
 		  h1 {
 		  	font-size: 2rem;
 			}

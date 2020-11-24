@@ -29,8 +29,12 @@
 				</div>
 				<div class="site-title">
 					<h1>
-						<a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'title' ); ?><br>
-						<small><?php echo get_bloginfo( 'description' ); ?></small></a>
+						<a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'title' ); ?>
+							<?php if ( get_bloginfo( 'description' ) ) : ?>
+								<br>
+								<small><?php echo get_bloginfo( 'description' ); ?></small>
+							<?php endif; ?>
+						</a>
 					</h1>
 				</div>
 			</div>
