@@ -390,6 +390,7 @@ NAVIGATION STYLES
 			}
 		}
 		@include breakpoint(xlarge) {
+			@include xy-cell(4);
 			img {
 		  		//max-width: 300px;
 		  	}
@@ -420,6 +421,9 @@ NAVIGATION STYLES
 		  h1 {
 		  	font-size: 2rem;
 			}
+		}
+		@include breakpoint(large) {  
+			@include xy-cell(8);
 		}
 	}	
 }
