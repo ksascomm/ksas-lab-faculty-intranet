@@ -362,69 +362,71 @@ NAVIGATION STYLES
 		margin-right: inherit;
 	}
 	.nav-shield {
-		padding-top: 1rem;
-		@include breakpoint(small only) {
-		  @include xy-cell(12);
-		    img {
-		      display: block;
-		      margin-left: auto;
-		      margin-right: auto;
-		      margin-top: 1rem;
-		      margin-bottom: 1rem;
-		      width: 70%;
-		    }
-		}
-		@include breakpoint(medium) {  
-		  @include xy-cell(5);
-		  img {
-		    padding: 0rem 1rem .75rem;
-		  }
-		}
-		@include breakpoint(medium only) {
-		   //margin-top: 1rem;
-		}
-		@include breakpoint(large) {  
-		  @include xy-cell(5);
-		  	img {
-		  		//max-width: 275px;
-			}
-		}
-		@include breakpoint(xlarge) {
-			@include xy-cell(4);
-			img {
-		  		//max-width: 300px;
-		  	}
-		}
+    @include breakpoint(small only) {
+      @include xy-cell(12);
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          width: 50%;
+        }
+    }
+    @include breakpoint(medium) {  
+      @include xy-cell(4);
+    }
+    @include breakpoint(large) {
+      @include xy-cell(4);
+    }
+    @include breakpoint(xlarge) {  
+      @include xy-cell(3);
+    }
 	}
 	.site-title {
-		padding-top: 1rem;
 		@include breakpoint(small only) {  
-		  width: 100%;
-		  text-align: center;
-		  .top-bar-title {
-		    @include breakpoint (small only) {
-		      @include xy-cell(12);
-		      margin-top: 1rem;
-		      margin-bottom: 1rem;
-		    }
-		  }
-		}
-		@include breakpoint(medium) {  
-		  @include xy-cell(7);
-		  text-align: left;
-		  h1 {
-		  	font-size: 1.5rem;
-		  }
-		}
-		@include breakpoint(large) {  
-		  @include xy-cell(7);
-		  h1 {
-		  	font-size: 2rem;
-			}
-		}
-		@include breakpoint(large) {  
-			@include xy-cell(8);
-		}
+      width: 100%;
+      text-align: center;
+      .top-bar-title {
+        @include breakpoint (small only) {
+          @include xy-cell(12);
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    @include breakpoint(medium) {  
+      @include xy-cell(8);
+      text-align: left;
+    }
+    @include breakpoint(large) {  
+      @include xy-cell(8);
+    }
+    @include breakpoint(xlarge) {  
+      @include xy-cell(9);
+    }    
+    h1 {
+        @include breakpoint(medium) {
+          line-height: 1.1em;
+          margin-top: .5rem;
+        }
+        @include breakpoint(large) {
+          margin-top:1rem;
+        }
+      small {
+        font-size: 50%;
+        color: $white;
+        margin-bottom: 1px;
+        display: block;
+        line-height: 1.3;
+      }
+      a {
+        color: $white;
+        &:hover, &:focus &:visited {
+          color: $white;
+        }
+      }
+    }    
 	}	
 }
 
