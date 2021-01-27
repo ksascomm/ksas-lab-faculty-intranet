@@ -144,7 +144,7 @@ gulp.task('images', function() {
  gulp.task( 'translate', function () {
      return gulp.src( SOURCE.php )
          .pipe(plugin.wpPot( {
-             domain: 'jointswp',
+             domain: 'ksaslab',
              package: 'Example project'
          } ))
         .pipe(gulp.dest('file.pot'));

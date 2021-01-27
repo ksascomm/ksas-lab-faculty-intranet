@@ -17,21 +17,21 @@ function custom_post_example() {
     register_post_type( 'custom_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
         // let's now add all the options for this post type
         array('labels' => array(
-            'name' => __('Custom Types', 'jointswp'), /* This is the Title of the Group */
-            'singular_name' => __('Custom Post', 'jointswp'), /* This is the individual type */
-            'all_items' => __('All Custom Posts', 'jointswp'), /* the all items menu item */
-            'add_new' => __('Add New', 'jointswp'), /* The add new menu item */
-            'add_new_item' => __('Add New Custom Type', 'jointswp'), /* Add New Display Title */
-            'edit' => __( 'Edit', 'jointswp' ), /* Edit Dialog */
-            'edit_item' => __('Edit Post Types', 'jointswp'), /* Edit Display Title */
-            'new_item' => __('New Post Type', 'jointswp'), /* New Display Title */
-            'view_item' => __('View Post Type', 'jointswp'), /* View Display Title */
-            'search_items' => __('Search Post Type', 'jointswp'), /* Search Custom Type Title */ 
-            'not_found' =>  __('Nothing found in the Database.', 'jointswp'), /* This displays if there are no entries yet */ 
-            'not_found_in_trash' => __('Nothing found in Trash', 'jointswp'), /* This displays if there is nothing in the trash */
+            'name' => __('Custom Types', 'ksaslab'), /* This is the Title of the Group */
+            'singular_name' => __('Custom Post', 'ksaslab'), /* This is the individual type */
+            'all_items' => __('All Custom Posts', 'ksaslab'), /* the all items menu item */
+            'add_new' => __('Add New', 'ksaslab'), /* The add new menu item */
+            'add_new_item' => __('Add New Custom Type', 'ksaslab'), /* Add New Display Title */
+            'edit' => __( 'Edit', 'ksaslab' ), /* Edit Dialog */
+            'edit_item' => __('Edit Post Types', 'ksaslab'), /* Edit Display Title */
+            'new_item' => __('New Post Type', 'ksaslab'), /* New Display Title */
+            'view_item' => __('View Post Type', 'ksaslab'), /* View Display Title */
+            'search_items' => __('Search Post Type', 'ksaslab'), /* Search Custom Type Title */ 
+            'not_found' =>  __('Nothing found in the Database.', 'ksaslab'), /* This displays if there are no entries yet */ 
+            'not_found_in_trash' => __('Nothing found in Trash', 'ksaslab'), /* This displays if there is nothing in the trash */
             'parent_item_colon' => ''
             ), /* end of arrays */
-            'description' => __( 'This is the example custom post type', 'jointswp' ), /* Custom Type Description */
+            'description' => __( 'This is the example custom post type', 'ksaslab' ), /* Custom Type Description */
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => false,
@@ -68,16 +68,16 @@ function custom_post_example() {
         array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
         array('hierarchical' => true,     /* if this is true, it acts like categories */             
             'labels' => array(
-                'name' => __( 'Custom Categories', 'jointswp' ), /* name of the custom taxonomy */
-                'singular_name' => __( 'Custom Category', 'jointswp' ), /* single taxonomy name */
-                'search_items' =>  __( 'Search Custom Categories', 'jointswp' ), /* search title for taxomony */
-                'all_items' => __( 'All Custom Categories', 'jointswp' ), /* all title for taxonomies */
-                'parent_item' => __( 'Parent Custom Category', 'jointswp' ), /* parent title for taxonomy */
-                'parent_item_colon' => __( 'Parent Custom Category:', 'jointswp' ), /* parent taxonomy title */
-                'edit_item' => __( 'Edit Custom Category', 'jointswp' ), /* edit custom taxonomy title */
-                'update_item' => __( 'Update Custom Category', 'jointswp' ), /* update title for taxonomy */
-                'add_new_item' => __( 'Add New Custom Category', 'jointswp' ), /* add new title for taxonomy */
-                'new_item_name' => __( 'New Custom Category Name', 'jointswp' ) /* name title for taxonomy */
+                'name' => __( 'Custom Categories', 'ksaslab' ), /* name of the custom taxonomy */
+                'singular_name' => __( 'Custom Category', 'ksaslab' ), /* single taxonomy name */
+                'search_items' =>  __( 'Search Custom Categories', 'ksaslab' ), /* search title for taxomony */
+                'all_items' => __( 'All Custom Categories', 'ksaslab' ), /* all title for taxonomies */
+                'parent_item' => __( 'Parent Custom Category', 'ksaslab' ), /* parent title for taxonomy */
+                'parent_item_colon' => __( 'Parent Custom Category:', 'ksaslab' ), /* parent taxonomy title */
+                'edit_item' => __( 'Edit Custom Category', 'ksaslab' ), /* edit custom taxonomy title */
+                'update_item' => __( 'Update Custom Category', 'ksaslab' ), /* update title for taxonomy */
+                'add_new_item' => __( 'Add New Custom Category', 'ksaslab' ), /* add new title for taxonomy */
+                'new_item_name' => __( 'New Custom Category Name', 'ksaslab' ) /* name title for taxonomy */
             ),
             'show_admin_column' => true, 
             'show_ui' => true,
@@ -91,16 +91,16 @@ function custom_post_example() {
         array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
         array('hierarchical' => false,    /* if this is false, it acts like tags */                
             'labels' => array(
-                'name' => __( 'Custom Tags', 'jointswp' ), /* name of the custom taxonomy */
-                'singular_name' => __( 'Custom Tag', 'jointswp' ), /* single taxonomy name */
-                'search_items' =>  __( 'Search Custom Tags', 'jointswp' ), /* search title for taxomony */
-                'all_items' => __( 'All Custom Tags', 'jointswp' ), /* all title for taxonomies */
-                'parent_item' => __( 'Parent Custom Tag', 'jointswp' ), /* parent title for taxonomy */
-                'parent_item_colon' => __( 'Parent Custom Tag:', 'jointswp' ), /* parent taxonomy title */
-                'edit_item' => __( 'Edit Custom Tag', 'jointswp' ), /* edit custom taxonomy title */
-                'update_item' => __( 'Update Custom Tag', 'jointswp' ), /* update title for taxonomy */
-                'add_new_item' => __( 'Add New Custom Tag', 'jointswp' ), /* add new title for taxonomy */
-                'new_item_name' => __( 'New Custom Tag Name', 'jointswp' ) /* name title for taxonomy */
+                'name' => __( 'Custom Tags', 'ksaslab' ), /* name of the custom taxonomy */
+                'singular_name' => __( 'Custom Tag', 'ksaslab' ), /* single taxonomy name */
+                'search_items' =>  __( 'Search Custom Tags', 'ksaslab' ), /* search title for taxomony */
+                'all_items' => __( 'All Custom Tags', 'ksaslab' ), /* all title for taxonomies */
+                'parent_item' => __( 'Parent Custom Tag', 'ksaslab' ), /* parent title for taxonomy */
+                'parent_item_colon' => __( 'Parent Custom Tag:', 'ksaslab' ), /* parent taxonomy title */
+                'edit_item' => __( 'Edit Custom Tag', 'ksaslab' ), /* edit custom taxonomy title */
+                'update_item' => __( 'Update Custom Tag', 'ksaslab' ), /* update title for taxonomy */
+                'add_new_item' => __( 'Add New Custom Tag', 'ksaslab' ), /* add new title for taxonomy */
+                'new_item_name' => __( 'New Custom Tag Name', 'ksaslab' ) /* name title for taxonomy */
             ),
             'show_admin_column' => true,
             'show_ui' => true,

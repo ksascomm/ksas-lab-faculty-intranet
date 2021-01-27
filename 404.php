@@ -7,7 +7,7 @@
 
 			<div class="hide-for-small-only siderail">
 			
-		    	<?php joints_sidebar_nav(); ?>
+		    	<?php ksaslab_sidebar_nav(); ?>
 
 		    	<div class="sidebar-nav search">
 		    		<hr><?php get_search_form(); ?>
@@ -20,11 +20,11 @@
 				<article class="content-not-found">
 				
 					<header class="article-header">
-						<h1><?php _e('Page Not Found', 'jointswp'); ?></h1>
+						<h1><?php _e('Page Not Found', 'ksaslab'); ?></h1>
 					</header> <!-- end article header -->
 			
 					<section class="entry-content">
-						<p><?php _e('The page you were looking for was not found, but maybe try looking again!', 'jointswp'); ?>. Or, email us at <a href="mailto:ksasweb@jhu.edu">ksasweb@jhu.edu</a></p>
+						<p><?php _e('The page you were looking for was not found, but maybe try looking again!', 'ksaslab'); ?>. Or, email us at <a href="mailto:ksasweb@jhu.edu">ksasweb@jhu.edu</a></p>
 					</section> <!-- end article section -->
 
 					<section class="search">

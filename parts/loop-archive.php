@@ -15,7 +15,7 @@
 					
 	<section class="entry-content" itemprop="text">
 		<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
-		<?php the_excerpt('<button class="tiny">' . __( 'Read more...', 'jointswp' ) . '</button>'); ?>
+		<?php the_excerpt('<button class="tiny">' . __( 'Read more...', 'ksaslab' ) . '</button>'); ?>
 	</section> <!-- end article section -->
 				    						
 </article> <!-- end article -->

@@ -21,7 +21,7 @@ single-bookmarks.php
 
 			<div class="hide-for-small-only siderail">
 
-		    	<?php joints_sidebar_nav(); ?>
+		    	<?php ksaslab_sidebar_nav(); ?>
 
 		    	<div class="sidebar-nav search">
 		    		<hr><?php get_search_form(); ?>

@@ -20,5 +20,5 @@
 			</form>
 		</div>	
 	</div>
-	<?php joints_off_canvas_nav(); ?>
+	<?php ksaslab_off_canvas_nav(); ?>
 </div>

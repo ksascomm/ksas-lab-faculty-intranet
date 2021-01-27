@@ -25,18 +25,18 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 */
 
 // RSS Dashboard Widget
-function joints_rss_dashboard_widget() {
+function ksaslab_rss_dashboard_widget() {
 	if(function_exists('fetch_feed')) {
 		include_once(ABSPATH . WPINC . '/feed.php');               // include the required file
 		$feed = fetch_feed('http://jointswp.com/feed/rss/');        // specify the source feed
 		$limit = $feed->get_item_quantity(5);                      // specify number of items
 		$items = $feed->get_items(0, $limit);                      // create an array of items
 	}
-	if ($limit == 0) echo '<div>' . __( 'The RSS Feed is either empty or unavailable.', 'jointswp' ) . '</div>';   // fallback message
+	if ($limit == 0) echo '<div>' . __( 'The RSS Feed is either empty or unavailable.', 'ksaslab' ) . '</div>';   // fallback message
 	else foreach ($items as $item) { ?>
 
 	<h4 style="margin-bottom: 0;">
-		<a href="<?php echo $item->get_permalink(); ?>" title="<?php echo mysql2date(__('j F Y @ g:i a', 'jointswp'), $item->get_date('Y-m-d H:i:s')); ?>" target="_blank">
+		<a href="<?php echo $item->get_permalink(); ?>" title="<?php echo mysql2date(__('j F Y @ g:i a', 'ksaslab'), $item->get_date('Y-m-d H:i:s')); ?>" target="_blank">
 			<?php echo $item->get_title(); ?>
 		</a>
 	</h4>
@@ -47,8 +47,8 @@ function joints_rss_dashboard_widget() {
 }
 
 // Calling all custom dashboard widgets
-function joints_custom_dashboard_widgets() {
-	wp_add_dashboard_widget('joints_rss_dashboard_widget', __('Custom RSS Feed (Customize in admin.php)', 'jointswp'), 'joints_rss_dashboard_widget');
+function ksaslab_custom_dashboard_widgets() {
+	wp_add_dashboard_widget('ksaslab_rss_dashboard_widget', __('Custom RSS Feed (Customize in admin.php)', 'ksaslab'), 'ksaslab_rss_dashboard_widget');
 	/*
 	Be sure to drop any other created Dashboard Widgets
 	in this function and they will all load.
@@ -57,16 +57,16 @@ function joints_custom_dashboard_widgets() {
 // removing the dashboard widgets
 add_action('admin_menu', 'disable_default_dashboard_widgets');
 // adding any custom widgets
-add_action('wp_dashboard_setup', 'joints_custom_dashboard_widgets');
+add_action('wp_dashboard_setup', 'ksaslab_custom_dashboard_widgets');
 
 /************* CUSTOMIZE ADMIN *******************/
 // Custom Backend Footer
-function joints_custom_admin_footer() {
-	_e('<span id="footer-thankyou">Developed by <a href="#" target="_blank">Your Site Name</a></span>.', 'jointswp');
+function ksaslab_custom_admin_footer() {
+	_e('<span id="footer-thankyou">Developed by <a href="#" target="_blank">Your Site Name</a></span>.', 'ksaslab');
 }
 
 // adding it to the admin area
-add_filter('admin_footer_text', 'joints_custom_admin_footer');
+add_filter('admin_footer_text', 'ksaslab_custom_admin_footer');
 
 /************* ADD THEME OPTIONS *******************/
 // Add Theme Options Page

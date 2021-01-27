@@ -1,7 +1,7 @@
 <?php
 
 // Adding WP Functions & Theme Support
-function joints_theme_support() {
+function ksaslab_theme_support() {
 
 	// Add WP Thumbnail Support
 	add_theme_support( 'post-thumbnails' );
@@ -45,11 +45,11 @@ function joints_theme_support() {
     add_theme_support( 'wp-block-styles' );
 
 	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
-	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );
+	$GLOBALS['content_width'] = apply_filters( 'ksaslab_theme_support', 1200 );
 
 } /* end theme support */
 
-add_action( 'after_setup_theme', 'joints_theme_support' );
+add_action( 'after_setup_theme', 'ksaslab_theme_support' );
 
 add_action( 'wp_head',    'ksas_default_site_icon', 99 );
 add_action( 'login_head', 'ksas_default_site_icon', 99 );

@@ -13,6 +13,6 @@
 		</ul>
 	</div>
 	<div class="top-bar-right">
-		<?php joints_top_nav(); ?>
+		<?php ksaslab_top_nav(); ?>
 	</div>
 </div>

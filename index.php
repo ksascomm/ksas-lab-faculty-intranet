@@ -10,7 +10,7 @@ $theme_option = flagship_sub_get_global_options();
 
 			<div class="hide-for-small-only siderail">
 
-		    	<?php joints_sidebar_nav(); ?>
+		    	<?php ksaslab_sidebar_nav(); ?>
 
 		    	<div class="sidebar-nav search">
 		    		<hr><?php get_search_form(); ?>
@@ -29,7 +29,7 @@ $theme_option = flagship_sub_get_global_options();
 						</div> 
 				<?php endwhile; ?>	
 
-					<?php joints_page_navi(); ?>
+					<?php ksaslab_page_navi(); ?>
 					
 				<?php else : ?>
 											

@@ -94,11 +94,11 @@ gulp.task('scripts', function() {
             this.emit('end');
         }))
     .pipe(plugin.sourcemaps.init())
-    .pipe(plugin.babel({
-      presets: ['@babel/preset-env'],
-      compact: true,
-      ignore: ['what-input.js']
-    }))
+		.pipe(plugin.babel({
+			presets: ['es2015'],
+			compact: true,
+			ignore: ['what-input.js', 'what-input.min.js']
+		}))
     .pipe(CUSTOMFILTER)
       .pipe(plugin.jshint(JSHINT_CONFIG))
       .pipe(plugin.jshint.reporter('jshint-stylish'))
@@ -137,7 +137,7 @@ gulp.task('images', function() {
  gulp.task( 'translate', function () {
      return gulp.src( SOURCE.php )
          .pipe(plugin.wpPot( {
-             domain: 'jointswp',
+             domain: 'ksaslab',
              package: 'Example project'
          } ))
         .pipe(gulp.dest('file.pot'));
