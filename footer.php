@@ -1,11 +1,12 @@
 <?php
 /**
- * The template for displaying the footer. 
+ * The template for displaying the footer.
  *
  * Comtains closing divs for header.php.
  *
  * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
+
 ?>
 					<footer class="footer hide-for-print" role="contentinfo">
 						<div class="inner-footer">
@@ -21,13 +22,13 @@
 								<div class="small-12 cell">
 									<div class="copyright">
 										<?php $theme_option = flagship_sub_get_global_options(); ?>
-											<p>&copy; <?php print date('Y'); ?> Johns Hopkins University, <?php echo $theme_option['flagship_sub_copyright']; ?></p>
+											<p>&copy; <?php print date( 'Y' ); ?> Johns Hopkins University, <?php echo $theme_option['flagship_sub_copyright']; ?></p>
 										</div>
 									</div>
 								</div>
 								<div class="grid-x">
 									<div class="small-12 cell">
-										<a href="http://www.jhu.edu" target="_blank"><img class="jhushield" src="<?php echo get_template_directory_uri(); ?>/assets/images/university.jpg" alt="Johns Hopkins University"/></a>
+										<a href="http://www.jhu.edu" target="_blank"><img class="jhushield" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/university.logo.white.png" alt="Johns Hopkins University" width="374" height="72" loading="lazy"/></a>
 									</div>
 								</div>
 						</div> <!-- end #inner-footer -->

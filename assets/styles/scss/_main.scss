@@ -484,12 +484,7 @@ body.spirit {
 			outline: -webkit-focus-ring-color auto 5px;
 		}
 	}
-	.ai1ec-agenda-view .ai1ec-event .ai1ec-event-title, .ai1ec-agenda-widget-view .ai1ec-event .ai1ec-event-title {
-		color: $spirit;
-	}
-	.ai1ec-agenda-view .ai1ec-month, .ai1ec-agenda-widget-view .ai1ec-month {
-		background: $spirit;
-	}
+	
 	.roof {
 		background-color: $spirit;
 		.menu.simple a.button {
@@ -735,11 +730,6 @@ POSTS & CONTENT STYLES
 	@include breakpoint (xlarge) {
 		padding-right: 4rem;
 	}
-	@include breakpoint (large) {
-		.ai1ec-main-container {
-			width: 75%;
-		}
-	}
 }
 
 .wp-caption {
@@ -803,6 +793,14 @@ img.news {
   &.home {
   	height: rem-calc(350);
   }
+ }
+
+ .hero {
+	@include breakpoint(large) {
+		margin-right: 3rem;
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+	}
  }
 
 
@@ -901,7 +899,7 @@ SIDEBARS & ASIDES
 	}
 }
 
-.widget_text, .widget_black_studio_tinymce, .widget_recent_entries, .widget_ai1ec_agenda_widget {
+.widget_text, .widget_black_studio_tinymce, .widget_recent_entries {
 	.widgettitle {
 		padding-top:5px;
 	}
@@ -935,9 +933,9 @@ footer {
 	}
 	.jhushield {
 	display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 1.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1.5rem 2rem;
 	}
 }
 

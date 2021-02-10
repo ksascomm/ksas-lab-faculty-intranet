@@ -1,10 +1,10 @@
 <!doctype html>
 
-  <html class="no-js"  <?php language_attributes(); ?>>
+<html class="no-js"  <?php language_attributes(); ?>>
 
 	<head>
 		<meta charset="utf-8">
-		
+
 		<!-- Force IE to use the latest rendering engine available -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -13,38 +13,40 @@
 		<meta class="foundation-mq">
 		<meta name="date" content="<?php the_modified_date(); ?>" />
 		<title><?php create_page_title(); ?></title>
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 		<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/browserconfig.xml" />
-		
+
 		<?php wp_head(); ?>
-		<script src="https://kit.fontawesome.com/ed22ca715b.js" crossorigin="anonymous" defer></script>
 		<!-- Drop Google Analytics here -->
-		<?php get_template_part('parts/analytics'); ?>
+		<?php get_template_part( 'parts/analytics' ); ?>
 		<!-- end analytics -->
-	
+
 	</head>
-	
+
 	<!-- Uncomment this line if using the Off-Canvas Menu --> 
-	<?php $theme_option = flagship_sub_get_global_options(); $color_scheme = $theme_option['flagship_sub_color_scheme']; ?>
-	<body <?php body_class($color_scheme); ?>>
+	<?php
+	$theme_option = flagship_sub_get_global_options();
+	$color_scheme = $theme_option['flagship_sub_color_scheme'];
+	?>
+	<body <?php body_class( $color_scheme ); ?>>
 
 		<div class="off-canvas-wrapper">
-							
-				<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
-				
-				<div class="off-canvas-content" data-off-canvas-content>
-					
-					<header class="header" role="banner">
-							
-						 <!-- This navs will be applied to the topbar, above all content 
-							  To see additional nav styles, visit the /parts directory -->
 
-						 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
-		 				
+				<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
+
+				<div class="off-canvas-content" data-off-canvas-content>
+
+					<header class="header" role="banner">
+
+						<!-- This navs will be applied to the topbar, above all content 
+							To see additional nav styles, visit the /parts directory -->
+
+						<?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
+
 							<div class="show-for-print">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/krieger.small.horizontal.blue.jpg" alt="krieger logo">
-								<h1><?php echo get_bloginfo( 'description' ); ?> <?php echo get_bloginfo( 'title' ); ?></h1>
+								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/krieger.blue.svg" alt="krieger logo" width="300" height="87" loading="lazy">
+								<h1><?php bloginfo( 'description' ); ?> <?php echo bloginfo( 'title' ); ?></h1>
 							</div>						
 
 					</header> <!-- end .header -->
