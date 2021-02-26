@@ -19,7 +19,7 @@
 			$theme_option = flagship_sub_get_global_options();
 			$color_scheme = $theme_option['flagship_sub_color_scheme'];
 			if ( 'spirit' === $color_scheme ) : ?>
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>assets/images/ksas-horizontal-black.png" class="float-center" alt="Krieger School of Arts and Sciences" width="300" height="87">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/ksas-horizontal-black.png" class="float-center" alt="Krieger School of Arts and Sciences" width="300" height="87">
 			<?php else : ?>
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/krieger.white.svg" alt="Krieger School of Arts and Sciences" width="300" height="87">
 			<?php endif; ?>	
