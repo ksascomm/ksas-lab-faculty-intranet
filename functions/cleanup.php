@@ -102,24 +102,6 @@ function my_gallery_default_type_set_link( $settings ) {
 }
 add_filter( 'media_view_settings', 'my_gallery_default_type_set_link' );
 
-// function remove_jquery_migrate( &$scripts) {
-	// if(!is_admin()) {
-		// $scripts->remove('jquery');
-		// $scripts->add('jquery', false, array( 'jquery-core' ), '1.12.4');
-	// }
-// }
-// add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
-
-/*
-function ksas_upgrade_jquery() {
-	if ( !is_admin() ) {
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', '3.4.1', false);
-		wp_enqueue_script('jquery');
-	}
-}
-add_action( 'wp_enqueue_scripts', 'ksas_upgrade_jquery' );*/
-
 // Remove plugin CSS on specific page types
 function dequeue_css() {
 	if ( is_home() || is_front_page() ) {
@@ -151,3 +133,33 @@ function remove_thumbnail_dimensions( $html ) {
 	$html = preg_replace( '/(width|height)=\"\d*\"\s/', '', $html );
 	return $html;
 }
+
+/** Disable/Clean Inline Styles */
+function clean_post_content( $content ) {
+	// Remove inline styling.
+	// $content = preg_replace( '/(<[^>]+) style=".*?"/i', '$1', $content );.
+	$content = preg_replace( '/(<[span>]+) style=".*?"/i', '$1', $content );
+	$content = preg_replace( '/font-family\:.+?;/i', '', $content );
+	$content = preg_replace( '/color\:.+?;/i', '', $content );
+
+	// Remove font tag.
+	$content = preg_replace( '/<font[^>]+>/', '', $content );
+
+	// Remove empty tags.
+	$post_cleaners = array(
+		'<p></p>'             => '',
+		'<p> </p>'            => '',
+		'<p>&nbsp;</p>'       => '',
+		'<span></span>'       => '',
+		'<span> </span>'      => '',
+		'<span>&nbsp;</span>' => '',
+		'<span>'              => '',
+		'</span>'             => '',
+		'<font>'              => '',
+		'</font>'             => '',
+	);
+	$content       = strtr( $content, $post_cleaners );
+
+	return $content;
+}
+add_filter( 'the_content', 'clean_post_content' );
