@@ -2,6 +2,21 @@
 Description: Used to style the content editor in posts and pages
 */
 
+/* Main column width */
+.wp-block {
+    max-width: 85%;
+  }
+  
+  /* Width of "wide" blocks */
+  .wp-block[data-align="wide"] {
+    max-width: 95%;
+  }
+  
+  /* Width of "full-width" blocks */
+  .wp-block[data-align="full"] {
+    max-width: none;
+  }
+
 body { 
 	font-family: "gentona-light","Helvetica Neue",Roboto,sans-serif;
 	font-weight: 300;
