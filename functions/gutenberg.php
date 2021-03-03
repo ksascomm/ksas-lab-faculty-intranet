@@ -12,7 +12,7 @@
         array(
             'name' => __( 'Normal', 'ksasacademic' ),
             'shortName' => __( 'N', 'ksasacademic' ),
-            'size' => 16,
+            'size' => 18,
             'slug' => 'normal'
         ),
     ) );
