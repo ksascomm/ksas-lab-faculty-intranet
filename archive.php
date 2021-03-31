@@ -13,7 +13,7 @@
 		    	</div>
 		    </div>
 
-		    <main class="main auto cell" role="main">
+		    <main class="main auto cell" role="main" id="page">
 			    
 		    	<header>
 		    		<h1 class="page-title"><?php the_archive_title(); ?></h1>

@@ -18,7 +18,7 @@ $theme_option = flagship_sub_get_global_options();
 		    	
 		    </div>
 
-		    <main class="main auto cell" role="main">
+		    <main class="main auto cell" role="main" id="page">
 
 				<h1 class="page-title"><?php echo $theme_option['flagship_sub_feed_name']; ?> Archive</h1>
 

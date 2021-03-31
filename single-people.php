@@ -44,7 +44,7 @@
 
 	    </div>
 
-		 <main class="main auto cell" role="main">
+		 <main class="main auto cell" role="main" id="page">
 				<ul class="breadcrumbs">
 					<li><a href="<?php echo site_url(); ?>" title="Home">Home</a>
 					<li><a href="<?php echo site_url(); ?>/people/" title="People">People</a></li>

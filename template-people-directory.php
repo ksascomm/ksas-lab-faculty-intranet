@@ -35,7 +35,7 @@ get_header();
 				
 			</div>
 			
-			<main class="main auto cell" role="main">
+			<main class="main auto cell" role="main" id="page">
 			<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) :

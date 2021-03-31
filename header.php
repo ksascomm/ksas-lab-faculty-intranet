@@ -30,7 +30,9 @@
 	$color_scheme = $theme_option['flagship_sub_color_scheme'];
 	?>
 	<body <?php body_class( $color_scheme ); ?>>
-
+	<div role="navigation" aria-label="Skip to main content">
+		<a class="skip-main show-on-focus" href="#page" >Skip to main content</a>
+	</div>
 		<div class="off-canvas-wrapper">
 
 				<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
