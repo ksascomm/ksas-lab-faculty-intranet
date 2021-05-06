@@ -53,7 +53,7 @@ function flagship_sub_options_page_fields() {
 		'desc'    => __( 'Enter your Google Analytics ID ie. UA-2497774-9', 'flagship_sub_textdomain' ),
 		'type'    => 'text',
 		'class'   => 'nohtml',
-		'std'    => 'UA-40512757-1',
+		'std'     => 'UA-100553583-1',
 	);
 	$options[11] =
 	array(
